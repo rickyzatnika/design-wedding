@@ -64,6 +64,7 @@ const Aside = () => {
                 height={975}
                 objectFit="cover"
                 objectPosition="top"
+                style={{ width: "auto", height: "auto" }}
                 priority
               />
             ))}

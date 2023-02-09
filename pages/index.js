@@ -4,10 +4,13 @@ import Image from "next/legacy/image";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { BsArrowRight } from "react-icons/bs";
+import { FcCheckmark } from "react-icons/fc";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [uuid, setUuid] = useState("");
   const [copyText, setCopyText] = useState(true);
+  const [showMsg, setShowMsg] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -38,10 +41,7 @@ export default function Home() {
   const copy = () => {
     setCopyText(true);
     navigator.clipboard.writeText("13b2");
-    Swal.fire({
-      icon: "success",
-      text: "Disalin",
-    });
+    setShowMsg(true);
   };
 
   return (
@@ -109,15 +109,26 @@ export default function Home() {
             )}
           </button>
         </form>
-        <div className="absolute bottom-0 pb-2">
-          <p className="text-zinc-800">
-            gunakan kode ini :{" "}
+        {showMsg && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="flex absolute bottom-10 pb-4 items-center justify-center gap-1"
+          >
+            <p className="">Berhasil disalin</p>
+            <FcCheckmark />
+          </motion.div>
+        )}
+        <div className="absolute bottom-0 mb-4 py-2 px-6 bg-zinc-700">
+          <p className="text-zinc-300 text-sm">
+            masukkan kode ini :{" "}
             <span
-              className="border-b cursor-pointer border-zinc-700"
+              className="border-b cursor-pointer border-zinc-400"
               onClick={copy}
             >
               13b2
-            </span>
+            </span>{" "}
+            untuk melihat preview
           </p>
         </div>
       </div>

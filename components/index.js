@@ -6,3 +6,4 @@ export { default as Invitation } from "./section/Invitation";
 export { default as Event } from "./section/Event";
 export { default as Gallery } from "./section/Gallery";
 export { default as Navbar } from "./Navbar/NavMobile";
+export { default as PreviewModal } from "./previewModal";

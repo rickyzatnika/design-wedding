@@ -68,6 +68,22 @@
   }
 }
 
-/* .img-profile {
+.bg-image-man {
+  animation: wheel 3s infinite alternate;
+}
+.bg-image-woman {
+  animation: wheel 1s infinite alternate;
+}
 
-} */
+@keyframes wheel {
+  0% {
+    transform-origin: bottom;
+    transform: translateX(0%);
+    transform: rotate(2deg) scaleY(0.97) translateY(-4%);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: translateY(4%);
+    transform: rotate(-4deg) scale(1) translateX(2%);
+  }
+}

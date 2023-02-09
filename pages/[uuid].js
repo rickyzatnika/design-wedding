@@ -229,7 +229,7 @@ const Home = ({ guest }) => {
                 passHref
               >
                 <div className="antialiased group flex items-center justify-center gap-2 bg-zinc-800 w-full text-center py-4 text-zinc-100/90 ">
-                  Detail Undangan
+                  <span>Detail Undangan</span>
                   <BsFillArrowRightSquareFill
                     size={24}
                     className="relative left-0 group group-hover:left-4 transition-all duration-300"

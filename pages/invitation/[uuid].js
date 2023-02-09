@@ -13,12 +13,12 @@ import axios from "axios";
 const GuestInvitation = ({ guest }) => {
   return (
     <>
-      <Header guest={guest} />
-      <Profile guest={guest} />
+      <Header />
+      <Profile />
       <Invitation />
       <Event />
       <Gallery />
-      <Wish />
+      <Wish guest={guest} />
       <Navbar />
     </>
   );
