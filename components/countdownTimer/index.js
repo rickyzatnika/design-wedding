@@ -47,26 +47,27 @@ export default function CountDownTimer({ ...props }) {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-center flex flex-col justify-center items-center shadow-lg mx-auto  bg-gradient-to-tr w-20 sm:w-40  h-20 sm:h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
+          className="text-center flex flex-col pb-3 justify-center items-center shadow-lg mx-auto  bg-gradient-to-tr w-40  h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
         >
+          {/* Timer Days */}
           <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
             <span className="bg-gradient-to-b from-zinc-900 via-zinc-400 to-zinc-900 bg-clip-text text-transparent">
               {timerDays}
             </span>
           </div>
-          <small className="w-full  text-center text-zinc-900/80 font-semibold aboreto text-md sm:text-lg">
+          <small className="w-full  text-center text-zinc-900/80 font-semibold aboreto text-lg">
             Hari
           </small>
         </motion.div>
         <div className="w-full px-1 flex items-center justify-center h-full">
-          {/* Timer Days */}
+
 
           {/* Timer Hours */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-center flex flex-col  shadow-lg  bg-gradient-to-tr w-20 sm:w-40  h-20 sm:h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
+            className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
               <span className="bg-gradient-to-b from-zinc-900 via-zinc-400 to-zinc-900 bg-clip-text text-transparent">
@@ -82,7 +83,7 @@ export default function CountDownTimer({ ...props }) {
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="text-center flex flex-col  shadow-lg  bg-gradient-to-tr w-20 sm:w-40  h-20 sm:h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
+            className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
               <span className="bg-gradient-to-b from-zinc-900 via-zinc-400 to-zinc-900 bg-clip-text text-transparent">
@@ -98,7 +99,7 @@ export default function CountDownTimer({ ...props }) {
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-center flex flex-col  shadow-lg  bg-gradient-to-tr w-20 sm:w-40  h-20 sm:h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
+            className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
               <span className="bg-gradient-to-b from-zinc-900 via-zinc-400 to-zinc-900 bg-clip-text text-transparent">

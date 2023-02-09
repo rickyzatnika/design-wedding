@@ -13,6 +13,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Shikamaru";
+  src: url("../fonts/shikamaru.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "parisienne";
   src: url("../fonts/parisienne-regular.ttf");
   font-weight: normal;
@@ -85,5 +91,22 @@
     transform-origin: bottom;
     transform: translateY(4%);
     transform: rotate(-4deg) scale(1) translateX(2%);
+  }
+}
+
+.bg-invitation {
+  animation: slidein 5s infinite alternate-reverse;
+}
+
+@keyframes slidein {
+  0% {
+    transform: rotate(-45deg);
+  }
+  75% {
+    transform: scale(0.9) rotate(-40deg);
+  }
+
+  100% {
+    transform: rotate(-45deg);
   }
 }

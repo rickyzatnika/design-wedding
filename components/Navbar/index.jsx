@@ -58,11 +58,36 @@ const Navbar = () => {
     <nav
       className={
         activeSection && document.querySelector(`#${activeSection}`)
-          ? "w-fit opacity-100  scale-100 flex flex-col fixed top-90 right-96  sm:right-[450px] md:right-[460px] lg:right-[460px] z-[99999999] transition-all duration-300 ease-linear"
+          ? "w-fit opacity-100  scale-100 flex flex-col fixed top-90 right-96  sm:right-[450px] md:right-[460px] lg:right-[460px] z-50 transition-all duration-300 ease-linear"
           : "scale-0 opacity-0 transition-all duration-300 ease-linear"
       }
     >
       <ul className="w-full  bg-white/80 backdrop-blur flex flex-col gap-5  justify-center rounded-full h-full py-10  px-2">
+        <li
+          className={`relative group flex items-center justify-center ${
+            activeSection === "header" ? "text-zinc-800/90" : ""
+          }`}
+        >
+          <motion.span
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className={
+              activeSection === "header"
+                ? "block left-6 text-sm absolute bg-zinc-200/80 px-2 rounded-full"
+                : "hidden opacity-0 left-0 absolute bg-zinc-200/80 px-2 rounded-full "
+            }
+          >
+            Invitation
+          </motion.span>
+          <Link
+            href="#header"
+            className="nav-link"
+            onClick={(event) => handleClick(event, "header")}
+          >
+            <FcAbout size={20} />{" "}
+          </Link>
+        </li>
         <li
           className={`relative group flex items-center justify-center ${
             activeSection === "profile" ? "text-zinc-800/90" : ""
@@ -86,31 +111,6 @@ const Navbar = () => {
             onClick={(event) => handleClick(event, "profile")}
           >
             <FcBusinessContact size={20} />
-          </Link>
-        </li>
-        <li
-          className={`relative group flex items-center justify-center ${
-            activeSection === "invitation" ? "text-zinc-800/90" : ""
-          }`}
-        >
-          <motion.span
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
-            className={
-              activeSection === "invitation"
-                ? "block left-6 text-sm absolute bg-zinc-200/80 px-2 rounded-full"
-                : "hidden opacity-0 left-0 absolute bg-zinc-200/80 px-2 rounded-full "
-            }
-          >
-            Invitation
-          </motion.span>
-          <Link
-            href="#invitation"
-            className="nav-link"
-            onClick={(event) => handleClick(event, "invitation")}
-          >
-            <FcAbout size={20} />
           </Link>
         </li>
         <li

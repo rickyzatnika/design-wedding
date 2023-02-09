@@ -14,8 +14,8 @@ const GuestInvitation = ({ guest }) => {
   return (
     <>
       <Header />
+      <Invitation guest={guest} />
       <Profile />
-      <Invitation />
       <Event />
       <Gallery />
       <Wish guest={guest} />
@@ -31,12 +31,12 @@ export const getStaticPaths = async () => {
   const invitationDataList = res.data || [];
   const paths = invitationDataList.length
     ? invitationDataList.map((guests) => {
-        return {
-          params: {
-            uuid: guests.unique_Code,
-          },
-        };
-      })
+      return {
+        params: {
+          uuid: guests.unique_Code,
+        },
+      };
+    })
     : [];
   return {
     paths,

@@ -3,30 +3,14 @@ import Image from "next/legacy/image";
 import Canvas from "../canvas/Canvas";
 import Link from "next/link";
 import Sound from "../Backsound";
+import { images } from "../MyImage";
 import Navbar from "../Navbar";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Aside = () => {
-  const images = [
-    {
-      id: 1,
-      src: "/image/cover-header.jpg",
-    },
-    {
-      id: 2,
-      src: "/image/cover-home.jpg",
-    },
-    {
-      id: 3,
-      src: "/image/cover-home-3.jpg",
-    },
-    {
-      id: 4,
-      src: "/image/cover-home-4.jpg",
-    },
-  ];
+  
 
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
@@ -58,7 +42,7 @@ const Aside = () => {
             {images.map((img) => (
               <Image
                 key={img.id}
-                src={img.src}
+                src={`${img.src}`}
                 alt=""
                 width={975}
                 height={975}
@@ -77,7 +61,7 @@ const Aside = () => {
           <h1 className="text-8xl font-[parisienne] text-zinc-200">Reika</h1>
         </div>
         <div
-          className="-rotate-180 w-fit rounded-full flex items-center justify-between gap-2 fixed bottom-2 z-[9999999] py-4 bg-gradient-to-b from-black to-zinc-800 text-white"
+          className="-rotate-180 w-fit rounded-full flex items-center justify-between gap-2 fixed bottom-2 py-2 bg-gradient-to-b from-black to-zinc-800 text-white"
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="font-[Hattori] tracking-widest">
