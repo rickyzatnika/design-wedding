@@ -31,13 +31,14 @@ const Home = ({ guest }) => {
         }
       );
       setHidden(false);
-      if (values === "not Going" || values === "not going") {
-        setShowQRCode(false);
+      if (values === "not Going") {
         setHidden(true);
+        setShowQRCode(false);
         router.push(`/invitation/${guest.unique_Code}`);
+      } else {
+        setLoading(true);
+        setShowQRCode(true);
       }
-      setLoading(true);
-      setShowQRCode(true);
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -180,7 +181,11 @@ const Home = ({ guest }) => {
           </motion.div>
         )}
         {showQRCode && (
-          <div className="w-full h-screen backdrop-blur absolute top-0 z-[99999] flex flex-col justify-center items-center ">
+          <div
+            className={`w-full h-screen backdrop-blur absolute top-0 z-[99999] flex flex-col justify-center items-center ${
+              guest && guest.status === "not Going" ? "flex" : "hidden"
+            }`}
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.4 }}
               whileInView={{ opacity: 1, scale: 1 }}
