@@ -44,20 +44,20 @@ const ShowProtocol = () => {
     <>
       {showPopup && (
         <motion.div
-          initial={{ opacity: 1, y: -220 }}
-          whileInView={{ opacity: 1, y: 40 }}
+          initial={{ opacity: 0, y: -220 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 1,
-            type: "bounce",
+            type: "spring",
           }}
-          className="w-full rounded-3xl shadow-xl shadow-black/20 lg:w-2/6 fixed  h-96  transition-all duration-300 ease-linear top-40 right-0 mx-auto lg:right-0 bg-white z-[999999999]"
+          className="w-full rounded-3xl shadow-xl shadow-black/20 lg:w-[400px] mx-auto fixed h-full lg:h-96  transition-all duration-300 ease-linear top-0 lg:top-10 right-0 lg:right-8  bg-white z-[999999999]"
         >
           <div className=" w-full h-full pb-4 flex flex-col items-center justify-between">
             <div className="text-lg w-full shadow-lg py-2 shadow-black/30 text-zinc-200 bg-zinc-800 text-center ">
               <h1>MOHON UNTUK TETAP MEMATUHI</h1>
               <h2 className="font-[Hattori]">PROTOKOL KESEHATAN</h2>
             </div>
-            <div className="grid grid-cols-3 gap-2 justify-center">
+            <div className="grid grid-cols-3 px-3 gap-2 justify-center">
               {images.map((image) => (
                 <div key={image.id} className=" w-full h-full col-span-1 ">
                   <Image
@@ -72,7 +72,7 @@ const ShowProtocol = () => {
               ))}
             </div>
             <button
-              className=" group transition-all duration-100 ease-linear flex items-center gap-1 font-semibold py-1 px-6 rounded-full bg-zinc-300 shadow-md shadow-black/20 hover:bg-green-500/80 hover:text-zinc-200"
+              className=" group transition-all duration-100 ease-linear flex items-center gap-1 font-semibold py-1 px-6 text-zinc-100 rounded-full bg-green-500/80  shadow-md shadow-black/20 hover:bg-green-500/90 hover:text-zinc-200"
               onClick={() => setShowPopup(false)}
             >
               <span className="relative">Oke</span>

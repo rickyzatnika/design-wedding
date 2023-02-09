@@ -21,10 +21,15 @@ export default function Home() {
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${uuid}`
       );
-      if (response.data) {
-        router.push(`/${uuid}`);
+
+      if (!response.data) {
+        Swal.fire({
+          icon: "error",
+          text: error.response.data.msg,
+        });
       }
       setLoading(true);
+      router.push(`/invitation/${uuid}`);
     } catch (error) {
       if (error.response) {
         Swal.fire({
@@ -40,9 +45,19 @@ export default function Home() {
 
   const copy = () => {
     setCopyText(true);
-    navigator.clipboard.writeText("13b2");
+    navigator.clipboard.writeText("e1d4");
     setShowMsg(true);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setShowMsg(false);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  });
 
   return (
     <>
@@ -126,7 +141,7 @@ export default function Home() {
               className="border-b cursor-pointer border-zinc-400"
               onClick={copy}
             >
-              13b2
+              e1d4
             </span>{" "}
             untuk melihat preview
           </p>
@@ -135,3 +150,34 @@ export default function Home() {
     </>
   );
 }
+
+// export const getStaticPaths = async () => {
+//   const res = await axios.get(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation`);
+//   const invitationDataList = res.data || [];
+//   const paths = invitationDataList.length
+//     ? invitationDataList.map((guests) => {
+//         return {
+//           params: {
+//             uuid: guests.unique_Code,
+//           },
+//         };
+//       })
+//     : [];
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
+// export const getStaticProps = async () => {
+
+//   const res = await axios.get(
+//     `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${uuid}`
+//   );
+//   const guest = res.data || {};
+//   return {
+//     props: {
+//       guest,
+//     },
+//   };
+// };

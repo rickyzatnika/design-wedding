@@ -5,7 +5,7 @@ import bg from "../../public/image/ornamen-profile.png";
 const Profile = () => {
   return (
     <div
-      className="w-full h-screen flex flex-col items-center justify-between relative "
+      className="w-full min-h-screen flex flex-col items-center justify-center lg:justify-between relative "
       id="profile"
     >
       <div className="absolute w-full top-0 h-full -z-5">
@@ -18,7 +18,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="w-full relative flex flex-col items-center justify-center gap-16 h-full py-10 z-10">
+      <div className="w-full relative flex flex-col items-center justify-center gap-16 h-full py-20 z-10">
         <div className="flex flex-col items-center relative w-full">
           <Image
             src="/image/man-profile.png"

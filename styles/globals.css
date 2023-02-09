@@ -69,13 +69,13 @@
 }
 
 .bg-image-man {
-  animation: wheel 3s infinite alternate;
+  animation: wheels 3s infinite alternate;
 }
 .bg-image-woman {
-  animation: wheel 1s infinite alternate;
+  animation: wheels 1s infinite alternate;
 }
 
-@keyframes wheel {
+@keyframes wheels {
   0% {
     transform-origin: bottom;
     transform: translateX(0%);
