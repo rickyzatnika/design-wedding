@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
     ? invitationDataList.map((guests) => {
         return {
           params: {
-            unique_Code: guests.unique_Code,
+            uuid: guests.unique_Code,
           },
         };
       })
@@ -46,7 +46,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${params.unique_Code}`
+    `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${params.uuid}`
   );
   const guest = res.data || {};
   return {

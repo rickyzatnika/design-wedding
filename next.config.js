@@ -7,8 +7,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/invitation/:uuid",
-        destination: "/invitation/[unique_Code]",
+        source: "/invitation",
+        destination: "/invitation/[uuid]",
       },
     ];
   },
