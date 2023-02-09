@@ -34,7 +34,7 @@ const Home = ({ guest }) => {
       if (values === "not Going" || values === "not going") {
         setShowQRCode(false);
         setHidden(true);
-        router.push(`/invitation/${unique_Code}`);
+        router.push(`/invitation/${guest.uuid}`);
       }
       setLoading(true);
       setShowQRCode(true);
