@@ -10,6 +10,7 @@ module.exports = {
       animation: {
         spin: "spin 5s linear infinite",
         spins: "spin 50s linear infinite",
+        pulse: "pulse 1s linear infinite",
       },
     },
   },

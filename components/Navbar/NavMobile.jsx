@@ -65,14 +65,36 @@ const NavMobile = () => {
       <ul className="w-full  bg-zinc-300/80 backdrop-blur flex items-center justify-around rounded-full h-full py-2  px-6">
         <li
           className={`relative group flex gap-1 flex-col-reverse items-center justify-center ${
+            activeSection === "header" ? "text-zinc-800/90" : ""
+          }`}
+        >
+          <span
+            className={
+              activeSection === "header"
+                ? " text-xs"
+                : "hidden opacity-0 left-0 absolute"
+            }
+          >
+            Invitation
+          </span>
+          <Link
+            href="#header"
+            className="nav-link"
+            onClick={(event) => handleClick(event, "header")}
+          >
+            <FcAbout size={16} />
+          </Link>
+        </li>
+        <li
+          className={`relative group flex gap-1 flex-col-reverse items-center justify-center ${
             activeSection === "profile" ? "text-zinc-800/90" : ""
           }`}
         >
           <span
             className={
               activeSection === "profile"
-                ? " text-xs"
-                : "hidden opacity-0 left-0 absolute"
+                ? " text-xs   "
+                : "hidden opacity-0 left-0 absolute   "
             }
           >
             Profile
@@ -83,28 +105,6 @@ const NavMobile = () => {
             onClick={(event) => handleClick(event, "profile")}
           >
             <FcBusinessContact size={18} />
-          </Link>
-        </li>
-        <li
-          className={`relative group flex gap-1 flex-col-reverse items-center justify-center ${
-            activeSection === "invitation" ? "text-zinc-800/90" : ""
-          }`}
-        >
-          <span
-            className={
-              activeSection === "invitation"
-                ? " text-xs   "
-                : "hidden opacity-0 left-0 absolute   "
-            }
-          >
-            Invitation
-          </span>
-          <Link
-            href="#invitation"
-            className="nav-link"
-            onClick={(event) => handleClick(event, "invitation")}
-          >
-            <FcAbout size={16} />
           </Link>
         </li>
         <li

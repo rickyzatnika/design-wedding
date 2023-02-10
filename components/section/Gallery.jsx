@@ -17,15 +17,17 @@ const LightGallery = dynamic(() => import("lightgallery/react"), {
 const Gallery = () => {
   return (
     <>
-      <div id="gallery" className="w-full min-h-screen py-20 relative">
+      <div id="gallery" className="w-full min-h-screen relative">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-center py-4  "
+          className="text-center w-full py-4 grid grid-cols-1 leading-relaxed"
         >
-          <span className="font-[Hattori] bg-gradient-to-tr from-amber-600 via-yellow-700 to-amber-600 bg-clip-text text-transparent text-xl sm:text-4xl">
-            Our <span className="font-[timesi] font-semibold">Happiness</span>{" "}
+          <span className="font-[Hattori]  bg-gradient-to-br from-yellow-500 via-amber-700 to-amber-500 bg-clip-text text-transparent text-xl sm:text-4xl">
+            Our <br />
+            <span className="font-[timesi] font-semibold">Happiness</span>{" "}
+            <br />
             Moments
           </span>
         </motion.div>
@@ -109,6 +111,44 @@ const Gallery = () => {
                 objectPosition="center"
                 className="img-responsive rounded"
                 src="/image/cover-home-3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
+              />
+            </motion.div>
+          </Link>
+          <Link href="/image/cover-home-3.jpg">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/image/cover-home-3.jpg"
+                alt="Jasa Undangan Digital - ryza.inkara.id"
+                priority
+              />
+            </motion.div>
+          </Link>
+          <Link href="/image/cover-home-3.jpg">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <Image
+                width={100}
+                height={100}
+                layout="responsive"
+                objectFit="cover"
+                objectPosition="center"
+                className="img-responsive rounded"
+                src="/image/cover-home-2.jpg"
                 alt="Jasa Undangan Digital - ryza.inkara.id"
                 priority
               />

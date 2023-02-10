@@ -12,11 +12,11 @@ const CommentForm = ({ guest }) => {
 
   const formSubmit = async ({ name, message, presence }) => {
     await axios
-      .post(`${process.env.NEXT_PUBLIC_PRO_POST}/api/postComment`, {
+      .post(`${process.env.NEXT_PUBLIC_DEV_POST}/api/comment`, {
         name: name,
         message: message,
         presence: presence,
-        createdAt: moment().format("Do MMMM YYYY, h:mm a"),
+        createdAt: moment().format("DD MMMM YYYY, h:mm a"),
       })
       .then(() => {
         setLoading(true);
@@ -36,7 +36,7 @@ const CommentForm = ({ guest }) => {
             reset();
           setTimeout(() => {
             location.reload(
-              router.push(`/invitation/${router.query.uuid}/#wish`)
+              router.push(`/invitation/${guest.unique_Code}/#wish`)
             );
           }, 1000);
         }, 2000);
@@ -44,7 +44,7 @@ const CommentForm = ({ guest }) => {
       .catch((error) => {
         Swal.fire({
           icon: "error",
-          text: error.response.data.msg,
+          text: "Error",
         });
       });
   };
@@ -62,11 +62,11 @@ const CommentForm = ({ guest }) => {
     <>
       <div
         id="wish"
-        className="backdrop-blur shadow-xl rounded-md  shadow-black/10 px-1 lg:px-3 py-4 bg-[#242424]"
+        className="backdrop-blur shadow-xl rounded-md  shadow-black/10 px-1 lg:px-3  bg-[#181818]"
       >
         <form
           onSubmit={handleSubmit(formSubmit)}
-          className="max-w-3xl mx-auto px-2 py-2 flex flex-col "
+          className="max-w-3xl mx-auto px-2 py-9 flex flex-col "
         >
           <div className="flex items-center flex-col sm:flex-row justify-between w-full">
             <div className="w-full">
@@ -76,7 +76,7 @@ const CommentForm = ({ guest }) => {
                 type="text"
                 {...register("name", { required: true })}
                 value={guest.name}
-                className="w-full cursor-not-allowed bg-zinc-700/90 py-2 px-4 rounded text-zinc-100 border-none outline-none   placeholder:italic "
+                className="w-full cursor-not-allowed bg-zinc-700/90 my-2 py-2 px-4 rounded text-zinc-100 border-none outline-none   placeholder:italic "
               />
             </div>
             <div className="w-full py-1 sm:py-3">
@@ -86,11 +86,10 @@ const CommentForm = ({ guest }) => {
                 type="text"
                 {...register("presence", { required: true })}
                 value={guest.status === "going" ? "hadir" : "tidak hadir"}
-                className={`w-full cursor-not-allowed p-2 text-zinc-50 rounded border-none  outline-none capitalize ${
-                  guest.status === "going"
-                    ? "bg-green-400 text-zinc-50"
-                    : "bg-red-400 text-zinc-50"
-                }`}
+                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest.status === "going"
+                  ? "bg-green-500/80 text-zinc-50"
+                  : "bg-red-500/80 text-zinc-50"
+                  }`}
               />
             </div>
           </div>
@@ -100,7 +99,7 @@ const CommentForm = ({ guest }) => {
               name=""
               cols="30"
               rows="10"
-              className="w-full p-4 placeholder:italic rounded text-[#777] border-none  "
+              className="w-full p-4 focus:outline-indigo-500 focus:border-none placeholder:italic rounded text-[#777] border-none  "
               placeholder="Tulis Pesan ..."
               {...register("message", {
                 required: true,
