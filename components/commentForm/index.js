@@ -12,7 +12,7 @@ const CommentForm = ({ guest }) => {
 
   const formSubmit = async ({ name, message, presence }) => {
     await axios
-      .post(`${process.env.NEXT_PUBLIC_PRO_POST}/api/comment`, {
+      .post(`${process.env.NEXT_PUBLIC_DEV_POST}/api/comment`, {
         name: name,
         message: message,
         presence: presence,
