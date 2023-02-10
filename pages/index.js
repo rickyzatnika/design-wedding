@@ -36,6 +36,7 @@ export default function Home() {
       }
       setShowUnique(false);
       setShowPresent(true)
+
     } catch (error) {
       if (error.response) {
         Swal.fire({
@@ -70,6 +71,7 @@ export default function Home() {
 
   const onChanges = (e) => {
     setValues(e);
+
   };
 
   const copy = () => {
@@ -182,7 +184,7 @@ export default function Home() {
             <FcCheckmark />
           </motion.div>
         )}
-        <div className="absolute bottom-0 mb-4 py-2 px-6 bg-zinc-700">
+        <div className={`${showPresent ? "hidden" : "absolute  bottom-0 mb-4 py-2 px-6 bg-zinc-700"}`}>
           <p className="text-zinc-300 text-sm">
             masukkan kode ini :{" "}
             <span

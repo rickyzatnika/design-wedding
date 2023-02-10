@@ -16,7 +16,7 @@ const LightGallery = dynamic(() => import("lightgallery/react"), {
 const Gallery = () => {
   return (
     <>
-      <div id="gallery" className="w-full min-h-screen relative">
+      <div id="gallery" className="w-full min-h-screen py-10 relative">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
