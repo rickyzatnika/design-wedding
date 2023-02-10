@@ -19,7 +19,7 @@ export default function Home() {
 
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_DEV_URI}/invitation/${uuid}`
+        `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${uuid}`
       );
 
       if (!response.data) {
