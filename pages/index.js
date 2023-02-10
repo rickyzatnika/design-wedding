@@ -7,6 +7,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { FcCheckmark } from "react-icons/fc";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form"
+import { PreviewModal } from "../components";
 
 export default function Home() {
   const { register, handleSubmit } = useForm();
@@ -51,23 +52,22 @@ export default function Home() {
   // react-hook-form setup
 
   const formSubmit = async ({ status, present }) => {
-    await axios
-      .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/status/${uuid}`, {
-        present: present,
-        status: status,
-      })
-      .then(() => {
-        setShowUnique(false);
-        if (values === "not Going" || values === "not going") {
+    try {
+      await axios
+        .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/status/${uuid}`, {
+          present: present,
+          status: status,
+        })
 
-          router.push(`/invitation/${uuid}`);
-        }
-        router.push(`/invitation/${uuid}`);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      setShowUnique(false);
+      setLoading(true)
+      router.push(`/invitation/${uuid}`);
+
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   const onChanges = (e) => {
     setValues(e);
   };
@@ -108,6 +108,7 @@ export default function Home() {
 
   return (
     <>
+      <PreviewModal />
       <div className="w-full h-screen  absolute top-0 left-0 ">
         <Image
           src="/image/orn-2-top-right.png"
@@ -164,13 +165,9 @@ export default function Home() {
               className="text-white bg-zinc-900 px-2 hover:bg-black rounded-tr-xl"
               type="submit"
             >
-              {loading ? (
-                <div className="border-2 p-2 border-zinc-300  bg-clip-border animate-spin rounded-full relative overflow-x-hidden">
-                  <span className="absolute top-0 right-0 h-2 w-2  bg-green-400 rounded-full z-10"></span>
-                </div>
-              ) : (
-                <BsArrowRight size={20} />
-              )}
+
+              <BsArrowRight size={20} />
+
             </button>
           </form>
         }
@@ -241,12 +238,21 @@ export default function Home() {
               </div>
             )}
 
-            <button
+            {values && <button
               className="py-3 px-7 w-full text-white/80 bg-gradient-to-br from-zinc-800/90 to-zinc-900/80   hover:from-zinc-800 hover:to-zinc-900/90 "
               type="submit"
             >
-              Lanjut
-            </button>
+              {loading ? <>
+                <div className="flex items-center justify-center gap-2 w-full">
+                  <span>Loading...</span>
+                  <div className="border-2  p-2  border-zinc-300  bg-clip-border animate-spin rounded-full relative overflow-x-hidden">
+
+                    <span className="absolute top-0 right-0 h-2 w-2  bg-green-400 rounded-full z-10"></span>
+                  </div>
+                </div>
+              </> : <span> Buka Undangan</span>}
+
+            </button>}
           </form>
         }
 

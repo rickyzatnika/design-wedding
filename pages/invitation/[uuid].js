@@ -7,6 +7,7 @@ import {
   Invitation,
   Gallery,
   Event,
+  Footer,
 } from "../../components";
 import axios from "axios";
 
@@ -16,9 +17,10 @@ const GuestInvitation = ({ guest }) => {
       <Header />
       <Invitation guest={guest} />
       <Profile />
-      <Event />
+      <Event guest={guest} />
       <Gallery />
       <Wish guest={guest} />
+      <Footer />
       <Navbar />
     </>
   );

@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         <div className="col-span-8 overflow-hidden">
           <Aside />
         </div>
-        <div className="col-span-4 w-full relative bg-white h-full">
+        <div className="col-span-4 w-full overflow-hidden relative bg-white h-full">
           {children}
         </div>
       </main>

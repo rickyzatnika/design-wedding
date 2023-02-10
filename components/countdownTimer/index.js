@@ -46,6 +46,7 @@ export default function CountDownTimer({ ...props }) {
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3 }}
           className="text-center flex flex-col pb-3 justify-center items-center shadow-lg mx-auto  bg-gradient-to-tr w-40  h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
         >
@@ -66,6 +67,7 @@ export default function CountDownTimer({ ...props }) {
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
@@ -82,6 +84,7 @@ export default function CountDownTimer({ ...props }) {
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.7 }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
@@ -98,6 +101,7 @@ export default function CountDownTimer({ ...props }) {
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.8 }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >

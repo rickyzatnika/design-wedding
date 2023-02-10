@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/legacy/image";
+import { motion } from "framer-motion";
 
 const Invitation = ({ guest }) => {
   return (
@@ -19,27 +20,58 @@ const Invitation = ({ guest }) => {
         />
       </div>
       <div className="text-center p-4 lg:p-8 relative z-20">
-        <h1 className="text-zinc-100 mb-2 text-4xl font-[Hattori]">
+        <motion.h1
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-zinc-100 mb-2 text-4xl font-[Hattori]"
+        >
           Assalamu`alaikum Wr.Wb
-        </h1>
-        <p className="text-zinc-300 text-sm leading-relaxed">
+        </motion.h1>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-zinc-400 text-sm leading-relaxed"
+        >
           Dengan menyebut nama Allah SWT yang Maha Pengasih dan Maha Penyayang,
           kami dengan senang hati ingin mengundang Bapak/Ibu, Saudara/i,{" "}
-          {guest.name} dan berbagi kegembiraan pada pernikahan kami.
-        </p>
+          {guest.name} dan berbagi kegembiraan pada pernikahan kami yang Insya
+          Allah akan dilaksanakan,
+        </motion.p>
       </div>
-      <div className="flex flex-col items-center">
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="flex flex-col leading-relaxed justify-center text-center gap-2 items-center"
+      >
         <span className="text-zinc-400 italic">Pada Tanggal :</span>
-        <span className="text-4xl bg-gradient-to-tr from-amber-600 via-yellow-700 to-amber-600 bg-clip-text text-transparent font-[parisienne]">
+        <span className="text-4xl bg-gradient-to-tr from-amber-400 via-yellow-600 to-amber-400 bg-clip-text text-transparent font-[parisienne]">
           20 November 2023
         </span>
-      </div>
-      <div className="w-full flex flex-nowrap items-center justify-around">
+        <div className="py-4 leading-relaxed">
+          <p className="text-zinc-400 italic">Tempat :</p>
+          <p className="bg-gradient-to-tr from-amber-600/70 via-yellow-600/70 to-amber-500/70 bg-clip-text text-transparent">
+            Hotel Intercontinental Bandung, Dago Pakar
+          </p>
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ y: 25, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="w-full flex flex-nowrap items-center justify-around"
+      >
         <div className="w-fit text-center flex flex-col items-center gap-2  py-2 leading-relaxed">
-          <h3 className="text-zinc-200 text-md sm:text-xl uppercase">
+          <h3 className="text-zinc-400 text-md sm:text-xl font-[Hattori]">
             Akad Nikah
           </h3>
-          <div className="w-fit flex items-center justify-center mix-blend-screen brightness-50">
+          <div className="w-fit flex items-center justify-center mix-blend-screen brightness-75">
             <Image
               src="/image/ornamen-cincin.png"
               alt=""
@@ -52,10 +84,10 @@ const Invitation = ({ guest }) => {
           <p className="text-zinc-400 text-sm">Pukul 07.30 WIB - Selesai</p>
         </div>
         <div className="w-fit text-center flex flex-col items-center gap-2 py-2 leading-relaxed">
-          <h3 className="text-zinc-200 text-md sm:text-xl uppercase">
+          <h3 className="text-zinc-400 text-md sm:text-xl font-[Hattori]">
             Resepsi
           </h3>
-          <div className="w-fit flex items-center justify-center mix-blend-screen brightness-50">
+          <div className="w-fit flex items-center justify-center mix-blend-screen brightness-75">
             <Image
               src="/image/ornamen-cheers.png"
               alt=""
@@ -67,7 +99,7 @@ const Invitation = ({ guest }) => {
           </div>
           <p className="text-zinc-400 text-sm">Pukul 10.15 WIB - Selesai</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

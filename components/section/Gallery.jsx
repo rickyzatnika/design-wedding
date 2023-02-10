@@ -8,7 +8,6 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { motion } from "framer-motion";
-import { images } from "../MyImage";
 
 const LightGallery = dynamic(() => import("lightgallery/react"), {
   ssr: false,
@@ -22,6 +21,7 @@ const Gallery = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
           className="text-center w-full py-4 grid grid-cols-1 leading-relaxed"
         >
           <span className="font-[Hattori]  bg-gradient-to-br from-yellow-500 via-amber-700 to-amber-500 bg-clip-text text-transparent text-xl sm:text-4xl">
@@ -43,6 +43,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="hover:scale-105 shadow-lg shadow-black/10 "
             >
@@ -63,6 +64,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <Image
@@ -82,6 +84,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Image
@@ -101,6 +104,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Image
@@ -120,6 +124,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Image
@@ -139,6 +144,7 @@ const Gallery = () => {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <Image

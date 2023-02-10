@@ -1,5 +1,6 @@
 import Image from "next/legacy/image";
 import ShowProtocol from "../ShowProkes";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -9,7 +10,13 @@ const Header = () => {
         className="min-w-full min-h-screen flex flex-col items-center justify-center"
         id="header"
       >
-        <div className="w-full min-h-screen absolute top-0  ">
+        <motion.div
+          initial={{ scale: 2 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, delay: 1 }}
+          className="w-full min-h-screen overflow-hidden  absolute top-0  "
+        >
           <Image
             src="/image/cover-header.jpg"
             alt=""
@@ -17,7 +24,7 @@ const Header = () => {
             objectFit="cover"
             priority
           />
-        </div>
+        </motion.div>
         <div className="w-full min-h-screen bg-gradient-to-tr from-black to-transparent absolute top-0 z-10"></div>
         <div className="w-full relative z-20 flex flex-col items-center justify-center">
           <h1 className="text-zinc-200 font-[Hattori] text-3xl">

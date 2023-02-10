@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
-import { Layout, PreviewModal } from "../components";
+import { Layout } from "../components";
 
 export default function App({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   } else {
     return (
       <>
-        <PreviewModal />
+
         <Layout>
           <Component {...pageProps} />
         </Layout>

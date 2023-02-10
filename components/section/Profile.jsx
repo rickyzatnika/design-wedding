@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/legacy/image";
 import bg from "../../public/image/ornamen-profile.png";
 import Link from "next/link";
-import {SlSocialInstagram} from "react-icons/sl"
+import { SlSocialInstagram } from "react-icons/sl";
 
 const Profile = () => {
   return (
@@ -44,10 +44,20 @@ const Profile = () => {
             <h2 className="font-[Hattori] text-2xl bg-gradient-to-tr from-amber-600 via-yellow-700 bg-clip-text text-transparent">
               AGOES KOPAJA
             </h2>
-            <p className="text-zinc-600 text-sm">
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
               Putra dari Bpk. M.Indra Tajudin & Ibu Tika Pratiwi{" "}
             </p>
-            <Link href="https://instagram.com/webhouse_invitation" target="_blank" passHref prefetch={false}><SlSocialInstagram size={22} className="hover:rotate-12" /></Link>
+            <Link
+              href="https://instagram.com/webhouse_invitation"
+              target="_blank"
+              passHref
+              prefetch={false}
+            >
+              <SlSocialInstagram
+                size={22}
+                className="text-zinc-700 dark:text-zinc-400 animate-spin hover:animate-none"
+              />
+            </Link>
           </div>
         </div>
         <div className="font-[parisienne] text-6xl text-amber-700/80">&</div>
@@ -74,10 +84,20 @@ const Profile = () => {
             <h2 className="font-[Hattori] text-2xl bg-gradient-to-tr from-amber-600 via-yellow-700 bg-clip-text text-transparent">
               REIKA KOBUTRI
             </h2>
-            <p className="text-zinc-600">
+            <p className="text-zinc-600 dark:text-zinc-400">
               Putra dari Bpk. M.Indra Tajudin & Ibu Tika Pratiwi{" "}
             </p>
-            <Link href="https://instagram.com/webhouse_invitation" target="_blank" passHref prefetch={false}><SlSocialInstagram className="hover:rotate-12" size={22} /></Link>
+            <Link
+              href="https://instagram.com/webhouse_invitation"
+              target="_blank"
+              passHref
+              prefetch={false}
+            >
+              <SlSocialInstagram
+                className="text-zinc-700 dark:text-zinc-400 animate-spin hover:animate-none"
+                size={22}
+              />
+            </Link>
           </div>
         </div>
       </div>

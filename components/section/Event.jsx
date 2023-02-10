@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CountDown from "../countdownTimer";
 import Image from "next/legacy/image";
-
+import { MdOutlineQrCode2 } from "react-icons/md";
+import { motion } from "framer-motion";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import GetQrCode from "../GetQRCode";
 
-const Event = () => {
+const Event = ({ guest }) => {
+  const sectionRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+  const [displayed, setDisplayed] = useState(false);
+
+  const [showQrCode, setShowQrCode] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !displayed) {
+          setShowModal(true);
+          setDisplayed(true);
+        }
+      });
+    });
+    observer.observe(sectionRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [displayed]);
+
+  const handleQrCode = () => {
+    setShowQrCode(true);
+    setShowModal(false);
+  };
+
   return (
-    <div className="w-full min-h-screen relative" id="event">
+    <div ref={sectionRef} className="w-full min-h-screen relative" id="event">
+      {showQrCode && <GetQrCode setShowQrCode={setShowQrCode} />}
       <div className="absolute w-full top-0 h-full z-40">
         <Image
           src="/image/background-profile.png"
@@ -36,6 +66,39 @@ const Event = () => {
           trigger="click"
         ></AddToCalendarButton>
       </div>
+      {showModal && (
+        <>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className={`fixed overflow-hidden top-40 right-0 shadow-lg shadow-black/20 rounded-tl-xl rounded-bl-xl w-60 lg:w-80 h-auto py-8 lg:py-6 flex items-center z-50 justify-center bg-zinc-50 transition-all duration-500 ease-linear
+                ${
+                  showModal
+                    ? " right-0 "
+                    : " -right-[100%] transition-all duration-500 ease-linear"
+                }`}
+          >
+            <div className="text-center">
+              <div className="py-2 antialiased">
+                <h1 className="text-zinc-800">Hallo, {guest.name}</h1>
+                <p className="text-sm px-3 text-zinc-700/70">
+                  Jangan lupa untuk Screenshot QR-Code dan tunjukkan pada
+                  penerima tamu saat memasuki acara.
+                </p>
+              </div>
+              <div className="flex py-1 items-center shadow-md shadow-black/30 w-fit mx-auto px-4 rounded justify-center gap-1 bg-zinc-800">
+                <MdOutlineQrCode2 size={28} className="text-zinc-300" />
+                <button
+                  className="text-zinc-300 text-sm"
+                  onClick={() => handleQrCode()}
+                >
+                  Ambil QR-Code
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
     </div>
   );
 };

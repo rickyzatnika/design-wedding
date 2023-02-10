@@ -32,7 +32,7 @@ const ShowProtocol = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowPopup(true);
-    }, 10000); // 5000 adalah waktu dalam milidetik, 5 detik
+    }, 3000); // 5000 adalah waktu dalam milidetik, 5 detik
 
     return () =>
       clearTimeout(() => {
@@ -50,7 +50,7 @@ const ShowProtocol = () => {
             duration: 1,
             type: "spring",
           }}
-          className="w-full rounded-3xl shadow-xl shadow-black/20 lg:w-[400px] mx-auto fixed h-full lg:h-96  transition-all duration-300 ease-linear top-0 lg:top-10 right-0 lg:right-8  bg-white z-[999999999]"
+          className="w-full rounded-3xl shadow-xl shadow-black/20 lg:w-[400px] mx-auto fixed h-full lg:h-96  transition-all duration-300 ease-linear top-0 lg:top-10 right-0 lg:right-4  bg-white z-[999999999]"
         >
           <div className=" w-full h-full pb-4 flex flex-col items-center justify-between">
             <div className="text-lg w-full shadow-lg py-2 shadow-black/30 text-zinc-200 bg-zinc-800 text-center ">

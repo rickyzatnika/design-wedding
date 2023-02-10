@@ -10,8 +10,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Aside = () => {
-  
-
   const [activeIndex, setActiveIndex] = useState(0);
   const settings = {
     dots: false,
@@ -29,7 +27,7 @@ const Aside = () => {
   return (
     <>
       <Sound />
-      <div className="w-[80%] mx-auto h-screen hidden lg:flex items-center justify-center relative  ">
+      <div className="w-[80%] overflow-hidden mx-auto h-screen hidden lg:flex items-center justify-center relative  ">
         <Navbar />
         <div className="fixed  z-[999999] flex items-center rounded-full justify-center top-0 py-2 px-7 mt-2 shadow-md shadow-zinc-900/30 bg-white/80 backdrop-blur w-fit">
           <Link href="/" passHref className="text-zinc-900">
