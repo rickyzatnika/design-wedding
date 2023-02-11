@@ -10,7 +10,7 @@ const Profile = () => {
       className="w-full min-h-screen flex flex-col items-center justify-center lg:justify-between relative "
       id="profile"
     >
-      <div className="absolute w-full top-0 h-full z-40">
+      <div className="absolute w-full top-0 h-full z-20">
         <Image
           src="/image/background-profile.png"
           alt=""
@@ -20,7 +20,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="w-full relative  flex flex-col items-center justify-center gap-16 h-full py-20 z-50">
+      <div className="w-full relative  flex flex-col items-center justify-center gap-16 h-full py-20 z-30">
         <div className="flex flex-col items-center relative w-full">
           <Image
             src="/img/cover-invitation-man.png"

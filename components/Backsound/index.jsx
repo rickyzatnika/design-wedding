@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HiPause, HiPlay } from "react-icons/hi";
-import { motion } from "framer-motion";
 import { BiMusic } from "react-icons/bi";
 
 const BackSound = () => {
-  // const [latestScrollY, setLatestScrollY] = useState(false);
-  // const [showAudio, setShowAudio] = useState(false);
   const [isPlay, setIsPlay] = useState(true);
   const audioEl = useRef();
 
@@ -17,28 +14,18 @@ const BackSound = () => {
     setIsPlay(false);
     audioEl.current.pause();
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsPlay(true);
+      audioEl.current.play();
+    };
 
-  // useEffect(() => {
-  //   const hideAudio = () => {
-  //     const scrollY = window.scrollY;
-  //     if (typeof window !== "undefined") {
-  //       if (scrollY > latestScrollY) {
-  //         setShowAudio(true);
-  //       } else {
-  //         setShowAudio(false);
-  //       }
-  //     }
-  //     setLatestScrollY(scrollY);
-  //   };
+    window.addEventListener("scroll", handleScroll);
 
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("scroll", hideAudio);
-
-  //     return () => {
-  //       window.removeEventListener("scroll", hideAudio);
-  //     };
-  //   }
-  // }, [latestScrollY]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -68,18 +55,18 @@ const BackSound = () => {
         </div>
         <div className="hidden lg:flex flex-nowrap">
           {isPlay === true ? (
-            <p className="text-zinc-800  lg:text-zinc-600 text-clip mix-blend-screen flex flex-nowrap items-center gap-1 ">
+            <p className="text-zinc-800  lg:text-zinc-800 dark:text-zinc-300 text-clip mix-blend-screen flex flex-nowrap items-center gap-1 ">
               Now is Play <BiMusic className="animate-spin" />
             </p>
           ) : (
-            <p className="text-zinc-800  lg:text-zinc-600 text-clip mix-blend-screen">
+            <p className="text-zinc-800  lg:text-zinc-800 dark:text-zinc-300 text-clip mix-blend-screen">
               Play Songs
             </p>
           )}
         </div>
         {isPlay === true && (
           <div className="hidden lg:flex  items-center gap-2 ">
-            <marquee className=" text-zinc-900 lg:text-zinc-600 text-clip mix-blend-screen flex flex-row ">
+            <marquee className=" text-zinc-900 lg:text-zinc-700 dark:text-zinc-400 text-clip mix-blend-screen flex flex-row ">
               <span>Brian McKnight Jr - Marry Your Daughter.mp3</span>
             </marquee>
           </div>

@@ -18,7 +18,6 @@ const Aside = () => {
     speed: 2000,
     autoplaySpeed: 5000,
     fade: true,
-
     slidesToShow: 1,
     slideToScroll: 1,
     afterChange: (current) => setActiveIndex(current),
@@ -45,7 +44,8 @@ const Aside = () => {
                 width={975}
                 height={975}
                 objectFit="cover"
-                priority
+                placeholder="blur"
+                blurDataURL={img.src}
               />
             ))}
           </Slick>
@@ -56,7 +56,7 @@ const Aside = () => {
           <span className="text-4xl text-zinc-300 font-[timesi]">&</span>
           <h1 className="text-8xl font-[parisienne] text-zinc-200">Dinda</h1>
         </div>
-        <div className=" w-fit rounded-full flex items-center justify-between gap-2 fixed bottom-12 py-2 px-6 bg-gradient-to-b from-black to-zinc-800 text-white">
+        <div className=" w-fit flex items-center justify-between gap-2 fixed bottom-12 py-2 px-6  text-white">
           <span className="font-[Hattori] tracking-widest text-zinc-200">
             2 JULI 2023
           </span>

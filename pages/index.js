@@ -11,10 +11,10 @@ import { PreviewModal } from "../components";
 
 export default function Home() {
   const { register, handleSubmit } = useForm();
-  const [values, setValues] = useState(null);
   const [uuid, setUuid] = useState("");
   const [copyText, setCopyText] = useState(true);
-  const [showUnique, setShowUnique] = useState(true)
+  const [showUnique, setShowUnique] = useState(true);
+  const [selectedValue, setSelectedValue] = useState("");
   const [showMsg, setShowMsg] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPresent, setShowPresent] = useState(false);
@@ -50,6 +50,11 @@ export default function Home() {
     setUuid(e.target.value);
   };
 
+  const handleClick = (value) => {
+    setSelectedValue(value);
+
+  };
+
   // react-hook-form setup
 
   const formSubmit = async ({ status, present }) => {
@@ -69,10 +74,10 @@ export default function Home() {
     }
   };
 
-  const onChanges = (e) => {
-    setValues(e);
+  // const onChanges = (e) => {
+  //   setValues(e);
 
-  };
+  // };
 
   const copy = () => {
     setCopyText(true);
@@ -214,26 +219,28 @@ export default function Home() {
                 <div className="flex flex-nowrap gap-1">
                   <input
                     type="radio"
+                    checked={selectedValue === "going"}
                     value="going"
                     {...register("status", { required: true })}
-                    onChange={(e) => onChanges(e.target.value)}
+                    onChange={() => handleClick("going")}
                   />
-                  <label className="text-zinc-700">Ya, Akan Hadir</label>
+                  <label className="text-zinc-700" onClick={() => handleClick("going")}>Ya, Akan Hadir</label>
                 </div>
                 <div className="flex flex-nowrap gap-1">
                   <input
                     type="radio"
                     value="not Going"
+                    checked={selectedValue === "not Going"}
                     {...register("status", { required: true })}
-                    onChange={(e) => onChanges(e.target.value)}
+                    onChange={() => handleClick("not Going")}
                   />
-                  <label className="text-zinc-700">
+                  <label onClick={() => handleClick("not Going")} className="text-zinc-700">
                     Maaf, tidak bisa Hadir
                   </label>
                 </div>
               </div>
             </div>
-            {values === "going" && (
+            {selectedValue === "going" && (
               <div className="mb-3 w-full">
                 <h3 className="mb-2 text-lg text-zinc-800">
                   Berapa Orang yang Hadir :
@@ -247,7 +254,7 @@ export default function Home() {
               </div>
             )}
 
-            {values && <button
+            {selectedValue && <button
               className="py-3 px-7 w-full text-white/80 bg-gradient-to-br from-zinc-800/90 to-zinc-900/80   hover:from-zinc-800 hover:to-zinc-900/90 "
               type="submit"
             >

@@ -39,7 +39,7 @@ const Event = ({ guest }) => {
   return (
     <div ref={sectionRef} className="w-full min-h-screen relative" id="event">
       {showQrCode && <GetQrCode setShowQrCode={setShowQrCode} />}
-      <div className="absolute w-full top-0 h-full z-40">
+      <div className="absolute w-full top-0 h-full z-30">
         <Image
           src="/image/background-profile.png"
           alt=""
@@ -48,7 +48,7 @@ const Event = ({ guest }) => {
           priority
         />
       </div>
-      <div className="w-full min-h-screen flex flex-col items-center justify-around relative z-50">
+      <div className="w-full min-h-screen flex flex-col items-center justify-around relative z-40">
         <h1 className="text-4xl bg-gradient-to-tr from-amber-600 via-yellow-700 to-transparent bg-clip-text text-transparent font-[parisienne] ">
           Save The Date
         </h1>
