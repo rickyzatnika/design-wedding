@@ -111,9 +111,9 @@ export default function Home() {
   return (
     <>
       <PreviewModal />
-      <div className="w-full h-screen  absolute top-0 left-0 ">
+      <div className="w-full h-screen bg-goyang absolute top-0 left-0 ">
         <Image
-          src="/image/orn-2-top-right.png"
+          src="/img/ornamen-2-atas.png"
           alt=""
           layout="responsive"
           width={100}
@@ -123,29 +123,31 @@ export default function Home() {
           priority
         />
       </div>
+
       <div className="w-full h-screen pt-40 pb-0 z-50 relative flex flex-col gap-1 lg:gap-20 items-center justify-evenly">
         <div className="flex w-fit items-center justify-center">
           <div className="border border-r-0 border-b-0 border-zinc-500 box-content  relative left-2 text-center">
             <Image
-              src="/image/man-1.png"
+              src="/img/img-cover-woman.png"
+
               alt=""
-              width={150}
-              height={100}
+              width={250}
+              height={150}
               objectFit="contain"
               priority
             />
-            <p className="text-xs font-[TimesNewRomance]">AGOES</p>
+            <p className="text-md font-[Hattori] tracking-widest">DINDA</p>
           </div>
-          <div className="relative border border-l-0 border-t-0 border-zinc-500 box-content  text-center -left-2 top-12">
+          <div className="relative border border-l-0 border-t-0 border-zinc-500 box-content  text-center -left-2 ">
             <Image
-              src="/image/woman-1.png"
+              src="/img/img-cover-man.png"
               alt=""
-              width={150}
-              height={100}
+              width={250}
+              height={150}
               objectFit="contain"
               priority
             />
-            <p className="text-xs font-[TimesNewRomance]">REIKA</p>
+            <p className="text-MD font-[Hattori] tracking-widest">RAHMADI</p>
           </div>
         </div>
         {showUnique &&
@@ -184,16 +186,9 @@ export default function Home() {
             <FcCheckmark />
           </motion.div>
         )}
-        <div className={`${showPresent ? "hidden" : "absolute  bottom-0 mb-4 py-2 px-6 bg-zinc-700"}`}>
+        <div className={`${showPresent ? "hidden" : "absolute  bottom-4 rounded mb-4 py-2 px-6 bg-zinc-700"}`}>
           <p className="text-zinc-300 text-sm">
-            masukkan kode ini :{" "}
-            <span
-              className="border-b cursor-pointer border-zinc-400"
-              onClick={copy}
-            >
-              e1d4
-            </span>{" "}
-            untuk melihat preview
+            masukkan kode yang dikirimkan dari whatsaapp
           </p>
         </div>
         {showPresent &&

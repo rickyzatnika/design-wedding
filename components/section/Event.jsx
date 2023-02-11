@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import CountDown from "../countdownTimer";
 import Image from "next/legacy/image";
 import { MdOutlineQrCode2 } from "react-icons/md";
+import { TbMapSearch } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 import GetQrCode from "../GetQRCode";
+import Link from "next/link";
 
 const Event = ({ guest }) => {
   const sectionRef = useRef(null);
@@ -53,19 +55,32 @@ const Event = ({ guest }) => {
         <div className="w-full px-2">
           <CountDown />
         </div>
-        <AddToCalendarButton
-          name="The Wedding Agoes & Reika"
-          options="'Google'"
-          location="Intercontinental Bandung Dago Pakar"
-          startDate="2023-11-20"
-          startTime="10:15"
-          endTime="15:30"
-          buttonStyle="date"
-          timeZone="Asia/Jakarta"
-          label=" add to calendar"
-          trigger="click"
-        ></AddToCalendarButton>
+        <div className="flex flex-col gap-6 items-center justify-center">
+          <AddToCalendarButton
+            name="The Wedding Agoes & Reika"
+            options="'Google'"
+            location="Aula Gupusmu GSG Gatot.SP"
+            startDate="2023-7-2"
+            startTime="10:15"
+            endTime="14:20"
+            buttonStyle="date"
+            timeZone="Asia/Jakarta"
+            label=" add to calendar"
+            trigger="click"
+          ></AddToCalendarButton>
+          <Link
+            href="https://goo.gl/maps/25iiaK6raSq3JefF9"
+            target="_blank"
+            prefetch={false}
+            passHref
+            className="text-black py-2 px-5 text-sm flex items-center gap-2 bg-zinc-200 shadow-lg shadow-black/20 rounded "
+          >
+            <TbMapSearch size={20} className="text-zinc-600/80" />
+            OPEN MAPS
+          </Link>
+        </div>
       </div>
+
       {showModal && (
         <>
           <motion.div

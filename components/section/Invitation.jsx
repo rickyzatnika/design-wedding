@@ -51,12 +51,16 @@ const Invitation = ({ guest }) => {
       >
         <span className="text-zinc-400 italic">Pada Tanggal :</span>
         <span className="text-4xl bg-gradient-to-tr from-amber-400 via-yellow-600 to-amber-400 bg-clip-text text-transparent font-[parisienne]">
-          20 November 2023
+          02 Juli 2023
         </span>
         <div className="py-4 leading-relaxed">
           <p className="text-zinc-400 italic">Tempat :</p>
-          <p className="bg-gradient-to-tr from-amber-600/70 via-yellow-600/70 to-amber-500/70 bg-clip-text text-transparent">
-            Hotel Intercontinental Bandung, Dago Pakar
+          <p className="bg-gradient-to-tr flex text-xl flex-col items-center gap-4 from-amber-600/70 via-yellow-600/70 to-amber-500/70 bg-clip-text text-transparent">
+            Aula Gupusmu GSG Gatot.SP <br />
+            <span className="px-6 leading-relaxed text-sm">
+              Jl. Cikutra No.201, Neglasari, Kec. Cibeunying Kaler, Kota
+              Bandung, Jawa Barat 40124
+            </span>
           </p>
         </div>
       </motion.div>
@@ -81,7 +85,10 @@ const Invitation = ({ guest }) => {
               priority
             />
           </div>
-          <p className="text-zinc-400 text-sm">Pukul 07.30 WIB - Selesai</p>
+          <p className="text-zinc-500/80 text-sm leading-loose">
+            {" "}
+            Pukul 08.00 WIB <br /> s/d <br /> Selesai
+          </p>
         </div>
         <div className="w-fit text-center flex flex-col items-center gap-2 py-2 leading-relaxed">
           <h3 className="text-zinc-400 text-md sm:text-xl font-[Hattori]">
@@ -97,7 +104,9 @@ const Invitation = ({ guest }) => {
               priority
             />
           </div>
-          <p className="text-zinc-400 text-sm">Pukul 10.15 WIB - Selesai</p>
+          <p className="text-zinc-500/80 text-sm leading-loose">
+            Pukul 10.00 WIB <br /> s/d <br /> Pukul 14.20 WIB
+          </p>
         </div>
       </motion.div>
     </div>

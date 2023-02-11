@@ -11,7 +11,7 @@ export default function CountDownTimer({ ...props }) {
 
   useEffect(() => {
     const startTimer = () => {
-      const countdownDate = new Date("November 20 2023 00:00:00").getTime();
+      const countdownDate = new Date("July 2 2023 00:00:00").getTime();
       intervalRef.current = setInterval(() => {
         const now = new Date().getTime();
         const distance = countdownDate - now;

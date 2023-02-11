@@ -35,7 +35,7 @@ const Aside = () => {
           </Link>
         </div>
         <Canvas />
-        <div className="w-full h-screen -z-50 top-0 left-0 right-0 bottom-0 fixed">
+        <div className="w-full min-h-screen  -z-50  top-0 left-0 right-0 bottom-0 fixed">
           <Slick {...settings}>
             {images.map((img) => (
               <Image
@@ -45,8 +45,6 @@ const Aside = () => {
                 width={975}
                 height={975}
                 objectFit="cover"
-                objectPosition="top"
-                style={{ width: "auto", height: "auto" }}
                 priority
               />
             ))}
@@ -54,16 +52,13 @@ const Aside = () => {
         </div>
         <div className="fixed -z-40 top-0 left-0 right-0 w-full h-screen bg-gradient-to-t from-black to-transparent" />
         <div className="text-center fixed flex flex-col gap-5">
-          <h1 className="text-8xl font-[parisienne] text-zinc-200">Agoes</h1>
+          <h1 className="text-8xl font-[parisienne] text-zinc-200">Rahmadi</h1>
           <span className="text-4xl text-zinc-300 font-[timesi]">&</span>
-          <h1 className="text-8xl font-[parisienne] text-zinc-200">Reika</h1>
+          <h1 className="text-8xl font-[parisienne] text-zinc-200">Dinda</h1>
         </div>
-        <div
-          className="-rotate-180 w-fit rounded-full flex items-center justify-between gap-2 fixed bottom-2 py-2 bg-gradient-to-b from-black to-zinc-800 text-white"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          <span className="font-[Hattori] tracking-widest">
-            20 NOVEMBER 2023
+        <div className=" w-fit rounded-full flex items-center justify-between gap-2 fixed bottom-12 py-2 px-6 bg-gradient-to-b from-black to-zinc-800 text-white">
+          <span className="font-[Hattori] tracking-widest text-zinc-200">
+            2 JULI 2023
           </span>
           <span className="w-2 h-2 rounded-full animate-ping bg-green-500/80 backdrop-blur"></span>
         </div>

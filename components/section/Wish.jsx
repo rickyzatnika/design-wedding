@@ -9,7 +9,7 @@ const Wish = ({ guest }) => {
 
   const getComments = async () => {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_PRO_GET}/api/comment`
+      `${process.env.NEXT_PUBLIC_DEV_GET}/api/comment`
     );
     setPosts(res.data);
   };
@@ -35,12 +35,10 @@ const Wish = ({ guest }) => {
             </span>
 
             <p className="mb-2 p-2 text-sm leading-relaxed lg:text-md font-thin text-zinc-300 ">
-              Happy wedding John & Elsa, semoga menjadi keluarga yang Sakinah,
-              Mawadah & Warohmah.. Amiin .. 🤲
+              Happy wedding Rahmadi & Dinda, semoga menjadi keluarga yang
+              Sakinah, Mawadah & Warohmah.. Amiin .. 🤲
             </p>
-            <small className="text-zinc-500 p-2 ">
-              9 February 2023, 9:14 pm
-            </small>
+            <small className="text-zinc-500 p-2 ">10 Juni 2023, 9:14 pm</small>
           </li>
         </ol>
         {posts?.map((post) => (

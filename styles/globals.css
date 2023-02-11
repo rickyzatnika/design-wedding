@@ -110,3 +110,18 @@
     transform: rotate(-45deg);
   }
 }
+
+.bg-goyang {
+  animation: goyang 5s linear infinite alternate-reverse;
+}
+
+@keyframes goyang {
+  0% {
+    transform-origin: top left;
+    transform: rotate(0) scale(0.9);
+  }
+  100% {
+    transform-origin: top left;
+    transform: rotate(10deg) scale(1);
+  }
+}
