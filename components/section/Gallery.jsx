@@ -31,9 +31,10 @@ const Gallery = () => {
           </span>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
           className="w-full lg:w-4/6 h-full my-14 mx-auto  py-1 px-6 "
         >
           <video
