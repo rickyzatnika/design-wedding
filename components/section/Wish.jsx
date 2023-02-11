@@ -9,7 +9,7 @@ const Wish = ({ guest }) => {
 
   const getComments = async () => {
     const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_PRO_GET}/api/comment`
+      `${process.env.NEXT_PUBLIC_DEV_GET}/api/comment`
     );
     setPosts(res.data);
   };

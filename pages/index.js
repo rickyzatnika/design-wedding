@@ -50,10 +50,12 @@ export default function Home() {
     setUuid(e.target.value);
   };
 
+
   const handleClick = (value) => {
     setSelectedValue(value);
-
   };
+
+
 
   // react-hook-form setup
 
@@ -62,7 +64,7 @@ export default function Home() {
       await axios
         .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/status/${uuid}`, {
           present: present,
-          status: status,
+          status: selectedValue,
         })
 
       setShowUnique(false);
@@ -219,22 +221,23 @@ export default function Home() {
                 <div className="flex flex-nowrap gap-1">
                   <input
                     type="radio"
-                    checked={selectedValue === "going"}
                     value="going"
-                    {...register("status", { required: true })}
                     onChange={() => handleClick("going")}
+                    {...register("status", { required: true })}
+                    checked={selectedValue === "going"}
+
                   />
-                  <label className="text-zinc-700" onClick={() => handleClick("going")}>Ya, Akan Hadir</label>
+                  <label className="text-zinc-700" onClick={(e) => { e.preventDefault(); handleClick("going") }}>Ya, Akan Hadir</label>
                 </div>
                 <div className="flex flex-nowrap gap-1">
                   <input
                     type="radio"
                     value="not Going"
+                    {...register("status", { required: true, })}
                     checked={selectedValue === "not Going"}
-                    {...register("status", { required: true })}
                     onChange={() => handleClick("not Going")}
                   />
-                  <label onClick={() => handleClick("not Going")} className="text-zinc-700">
+                  <label onClick={(e) => { e.preventDefault(); handleClick("not Going") }} className="text-zinc-700">
                     Maaf, tidak bisa Hadir
                   </label>
                 </div>
