@@ -58,7 +58,7 @@ const NavMobile = () => {
     <nav
       className={
         activeSection && document.querySelector(`#${activeSection}`)
-          ? "w-full opacity-100 px-2 scale-100 flex lg:hidden fixed bottom-3   z-[99999999] transition-all duration-300 ease-linear"
+          ? "w-full opacity-100 px-2 scale-100 flex lg:hidden fixed bottom-3 z-40 transition-all duration-300 ease-linear"
           : "scale-0 opacity-0 transition-all duration-300 ease-linear"
       }
     >

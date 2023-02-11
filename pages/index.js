@@ -111,7 +111,7 @@ export default function Home() {
   return (
     <>
       <PreviewModal />
-      <div className="w-full h-screen bg-goyang absolute top-0 left-0 ">
+      <div className="w-full h-screen bg-goyang absolute -top-6 left-0 ">
         <Image
           src="/img/ornamen-2-atas.png"
           alt=""
@@ -123,8 +123,20 @@ export default function Home() {
           priority
         />
       </div>
+      <div className="w-full h-screen bg-goyang absolute top-3 right-0 ">
+        <Image
+          src="/img/ornamen-2-atas.png"
+          alt=""
+          layout="responsive"
+          width={100}
+          height={75}
+          objectFit="cover"
+          objectPosition="top"
+          priority
+        />
+      </div>
 
-      <div className="w-full h-screen pt-40 pb-0 z-50 relative flex flex-col gap-1 lg:gap-20 items-center justify-evenly">
+      <div className="w-full h-screen pt-40 pb-0 z-50 relative flex flex-col gap-1  items-center justify-evenly">
         <div className="flex w-fit items-center justify-center">
           <div className="border border-r-0 border-b-0 border-zinc-500 box-content  relative left-2 text-center">
             <Image

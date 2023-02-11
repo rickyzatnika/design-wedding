@@ -125,3 +125,17 @@
     transform: rotate(10deg) scale(1);
   }
 }
+
+.gerak {
+  animation: grak 400ms linear infinite;
+  font-size: 18px;
+}
+
+@keyframes grak {
+  0% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
+}
