@@ -12,7 +12,7 @@ const CommentForm = ({ guest }) => {
 
   const formSubmit = async ({ name, message, presence }) => {
     await axios
-      .post(`${process.env.NEXT_PUBLIC_DEV_POST}/api/comment`, {
+      .post(`${process.env.NEXT_PUBLIC_PRO_POST}/api/comment`, {
         name: name,
         message: message,
         presence: presence,
@@ -85,10 +85,10 @@ const CommentForm = ({ guest }) => {
                 readOnly
                 type="text"
                 {...register("presence", { required: true })}
-                value={guest.status == "going" ? "hadir" : "tidak hadir"}
-                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest && guest.status == "going"
-                  ? "bg-green-500/80 text-zinc-50"
-                  : "bg-red-500/80 text-zinc-50"
+                value={guest.status === "going" ? "hadir" : "tidak hadir"}
+                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest.status !== "going"
+                  ? "bg-red-500/80 text-zinc-50"
+                  : "bg-green-500/80 text-zinc-50"
                   }`}
               />
             </div>
