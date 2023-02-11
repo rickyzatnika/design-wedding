@@ -85,7 +85,7 @@ const Profile = () => {
               DINDA NOVITA SARY
             </h2>
             <p className="text-zinc-600 dark:text-zinc-500 text-center text-sm">
-              Putra dari Bpk. Nana Heryana dan Ibu Sri Sumiarti
+              Putri dari Bpk. Nana Heryana dan Ibu Sri Sumiarti
             </p>
             <Link
               href="https://instagram.com/dindanovitas"

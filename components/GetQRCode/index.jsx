@@ -36,9 +36,9 @@ const GetQrCode = ({ setShowQrCode }) => {
             <div className="pb-5 py-10 flex w-full flex-col text-zinc-600 gap-2 items-center">
               <p className="font-[Hattori] tracking-widest">The Wedding Of</p>
               <p className="font-[parisienne] text-3xl font-semibold text-amber-600">
-                Agoes & Reika
+                Rahmadi & Dinda
               </p>
-              <span>Senin, 20 November 2023</span>
+              <span>Ahad, 02 Juli 2023</span>
               <div className="w-full text-center">
                 {qrCode && !qrCode ? (
                   <p>Loading....</p>
@@ -56,7 +56,7 @@ const GetQrCode = ({ setShowQrCode }) => {
                 <div className="flex flex-col items-center pt-3">
                   <BiMap size={28} className="text-zinc-900/80" />
                   <p className="text-zinc-900/80 antialiased font-[Hattori] ">
-                    Intercontinental Bandung Dago Pakar
+                    Aula Gupusmu GSG Gatot.SP
                   </p>
                 </div>
               </div>
