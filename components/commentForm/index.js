@@ -85,8 +85,8 @@ const CommentForm = ({ guest }) => {
                 readOnly
                 type="text"
                 {...register("presence", { required: true })}
-                value={guest.status === "going" ? "hadir" : "tidak hadir"}
-                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest && guest.status === "going"
+                value={guest.status == "going" ? "hadir" : "tidak hadir"}
+                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest && guest.status == "going"
                   ? "bg-green-500/80 text-zinc-50"
                   : "bg-red-500/80 text-zinc-50"
                   }`}
