@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/legacy/image";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowUp } from "react-icons/bs";
 import { FcCheckmark } from "react-icons/fc";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form"
@@ -150,7 +150,7 @@ export default function Home() {
 
           <form
             onSubmit={SubmitHandler}
-            className="flex relative z-50 w-full px-4 sm:w-3/6 md:w-4/6 lg:w-4/6 lg:px-0"
+            className="flex relative z-50 max-w-full w-5/6 px-4 sm:w-3/6 md:w-4/6 lg:w-4/6 lg:px-0"
           >
             <input
               type="text"
@@ -159,7 +159,7 @@ export default function Home() {
               onChange={handleChange}
               required
               placeholder="masukkan kode"
-              className="py-2 px-5 w-full bg-zinc-200/80  outline-none text-md text-zinc-800  placeholder:text-zinc-700"
+              className="py-3 px-5 w-full bg-zinc-200/80 rounded outline-none focus:outline-zinc-800 text-md text-zinc-800  placeholder:text-zinc-700"
             />
             <button
               className="text-white bg-zinc-900 px-2 hover:bg-black rounded-tr-xl"
@@ -182,9 +182,11 @@ export default function Home() {
             <FcCheckmark />
           </motion.div>
         )}
-        <div className={`${showPresent ? "hidden" : "absolute  bottom-4 rounded mb-4 py-2 px-6 bg-zinc-700"}`}>
-          <p className="text-zinc-300 text-sm">
-            masukkan kode yang dikirimkan dari whatsaapp
+        <div className={`${showPresent ? "hidden" : "absolute flex items-center justify-center flex-col   bottom-4 rounded mb-4  text-zinc-800"}`}>
+          <BsArrowUp className="relative -top-10 moveTop" />
+
+          <p className="text-sm">
+            masukkan kode undangan
           </p>
         </div>
         {showPresent &&

@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import { motion } from "framer-motion";
-
+import ShowProtocol from "../ShowProkes";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -146,6 +146,7 @@ const Gallery = () => {
           </Link>
         </LightGallery>
       </div>
+      <ShowProtocol />
     </>
   );
 };

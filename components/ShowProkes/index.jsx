@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/legacy/image";
 import { motion } from "framer-motion";
 import { SlLike } from "react-icons/sl";
+import Gifts from "../gifts";
 
 const ShowProtocol = () => {
   const images = [
@@ -27,37 +28,31 @@ const ShowProtocol = () => {
     },
   ];
 
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowPopup(true);
-    }, 3000); // 5000 adalah waktu dalam milidetik, 5 detik
-
-    return () =>
-      clearTimeout(() => {
-        timeout;
-      }, 500);
-  }, []);
+  const handleAmplop = () => {
+    setShowPopup(false);
+  };
 
   return (
     <>
-      {showPopup && (
+      {showPopup ? (
         <motion.div
-          initial={{ opacity: 0, y: -220 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             type: "spring",
           }}
-          className="w-full rounded-3xl shadow-xl shadow-black/20 lg:w-[400px] mx-auto fixed h-full lg:h-96  transition-all duration-300 ease-linear top-0 lg:top-10 right-0 lg:right-4  bg-white z-[999999999]"
+          className="w-full h-ful shadow-xl py-20 shadow-black/20 bg-white"
         >
-          <div className=" w-full h-full pb-4 flex flex-col items-center justify-between">
+          <div className=" w-full h-full flex flex-col items-center justify-between">
             <div className="text-lg w-full shadow-lg py-2 shadow-black/30 text-zinc-200 bg-zinc-800 text-center ">
               <h1>MOHON UNTUK TETAP MEMATUHI</h1>
               <h2 className="font-[Hattori]">PROTOKOL KESEHATAN</h2>
             </div>
-            <div className="grid grid-cols-3 px-3 gap-2 justify-center">
+            <div className=" py-20 grid grid-cols-3 px-3 gap-2 items-center justify-center">
               {images.map((image) => (
                 <div key={image.id} className=" w-full h-full col-span-1 ">
                   <Image
@@ -66,20 +61,23 @@ const ShowProtocol = () => {
                     width={100}
                     height={100}
                     objectFit="contain"
-                    priority
+                    placeholder="blur"
+                    blurDataURL={image.src}
                   />
                 </div>
               ))}
             </div>
             <button
               className=" group transition-all duration-100 ease-linear flex items-center gap-1 font-semibold py-1 px-6 text-zinc-100 rounded-full bg-green-500/80  shadow-md shadow-black/20 hover:bg-green-500/90 hover:text-zinc-200"
-              onClick={() => setShowPopup(false)}
+              onClick={() => handleAmplop()}
             >
               <span className="relative">Oke</span>
               <SlLike className="group-hover:animate-bounce " />
             </button>
           </div>
         </motion.div>
+      ) : (
+        <Gifts setShowPopup={setShowPopup} />
       )}
     </>
   );

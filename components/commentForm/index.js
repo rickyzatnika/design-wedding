@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const CommentForm = ({ guest }) => {
+
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -38,24 +39,24 @@ const CommentForm = ({ guest }) => {
             location.reload(
               router.push(`/invitation/${guest.unique_Code}/#wish`)
             );
-          }, 1000);
+          }, 3000);
         }, 2000);
+        return () => clearTimeout();
       })
       .catch((error) => {
         Swal.fire({
           icon: "error",
           text: "Error",
         });
+        console.log(error)
       });
   };
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setLoading(false);
-    }, 8000);
+    }, 3000);
     return () =>
-      clearInterval(() => {
-        setLoading(true);
-      });
+      clearInterval(interval);
   }, []);
 
   return (
@@ -93,12 +94,12 @@ const CommentForm = ({ guest }) => {
             </div>
           </div>
 
-          <div className="pt-3">
+          <div className="pt-3 antialiased">
             <textarea
               name=""
               cols="30"
               rows="10"
-              className="w-full p-4 focus:outline-indigo-500 focus:border-none placeholder:italic rounded text-[#777] border-none  "
+              className="w-full p-4 focus:outline-indigo-500 focus:border-none placeholder:italic rounded text-zinc-700 border-none  "
               placeholder="Tulis Pesan ..."
               {...register("message", {
                 required: true,

@@ -139,3 +139,17 @@
     transform: rotate(12deg);
   }
 }
+.moveTop {
+  animation: topMove 500ms linear infinite alternate;
+  font-size: 28px;
+}
+@keyframes topMove {
+  0% {
+    top: -2.5rem;
+    color: #333;
+  }
+  100% {
+    top: -3.8rem;
+    color: #bd7d34c9;
+  }
+}

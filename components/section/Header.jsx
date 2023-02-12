@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/legacy/image";
-import ShowProtocol from "../ShowProkes";
 import { motion } from "framer-motion";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -41,14 +40,13 @@ const Header = () => {
 
   return (
     <>
-      <ShowProtocol />
       <div
         className="min-w-full overflow-hidden min-h-screen flex flex-col relative items-center justify-center"
         id="header"
       >
         <motion.div
           initial={{ scale: 1.5 }}
-          className="w-full min-h-screen  overflow-hidden  absolute top-14 lg:top-10 right "
+          className="w-full min-h-screen  overflow-hidden  absolute top-12 lg:top-10 right "
         >
           <Slick {...settings}>
             {images.map((img) => (

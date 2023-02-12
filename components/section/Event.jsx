@@ -57,7 +57,7 @@ const Event = ({ guest }) => {
         </div>
         <div className="flex flex-col gap-6 items-center justify-center">
           <AddToCalendarButton
-            name="The Wedding Agoes & Reika"
+            name="The Wedding Rahmadi & Dinda"
             options="'Google'"
             location="Aula Gupusmu GSG Gatot.SP"
             startDate="2023-7-2"

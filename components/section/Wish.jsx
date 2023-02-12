@@ -1,23 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from "react";
 import CommentForm from "../commentForm";
-import axios from "axios";
-import { FcFeedback, FcLike } from "react-icons/fc";
+import { FcOk } from "react-icons/fc";
 
-const Wish = ({ guest }) => {
-  const [posts, setPosts] = useState([]);
-
-  const getComments = async () => {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_PRO_GET}/api/comment`
-    );
-    setPosts(res.data);
-  };
-
-  useEffect(() => {
-    getComments();
-  }, []);
-
+const Wish = ({ guest, posts }) => {
   return (
     <div className="w-full min-h-screen" id="wish">
       <CommentForm guest={guest} />
@@ -28,12 +12,11 @@ const Wish = ({ guest }) => {
         <ol className="border-l-2  border-gray-200 p-8 dark:border-zinc-400/60  ">
           <li className="w-full border-b pb-4 border-zinc-700">
             <div className="absolute w-3 h-3 left-1 lg:left-8 ">
-              <FcFeedback size={20} />
+              <FcOk size={20} />
             </div>
             <span className="mb-1 text-lg lg:text-xl font-normal leading-none text-zinc-700 dark:text-zinc-100">
               WebHouse.id
             </span>
-
             <p className="mb-2 p-2 text-sm leading-relaxed lg:text-md font-thin text-zinc-300 ">
               Happy wedding Rahmadi & Dinda, semoga menjadi keluarga yang
               Sakinah, Mawadah & Warohmah.. Amiin .. 🤲
@@ -48,7 +31,7 @@ const Wish = ({ guest }) => {
           >
             <li className="w-full border-b pb-4 border-zinc-700">
               <div className="absolute w-3 h-3 left-1 lg:left-8  ">
-                <FcLike size={20} className="animate-pulse" />
+                <FcOk size={20} />
               </div>
               <span className="mb-1 text-lg lg:text-xl font-normal leading-none text-zinc-700 dark:text-zinc-100">
                 {post.name}
