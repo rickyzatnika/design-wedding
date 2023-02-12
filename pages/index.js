@@ -76,34 +76,11 @@ export default function Home() {
     }
   };
 
-  // const onChanges = (e) => {
-  //   setValues(e);
-
-  // };
-
   const copy = () => {
     setCopyText(true);
     navigator.clipboard.writeText("e1d4");
     setShowMsg(true);
   };
-
-  // // get Qr-code
-  // useEffect(() => {
-  //   if (!guest) return;
-  //   const fetchQRCode = async () => {
-  //     try {
-  //       const { data } = await axios.get(
-  //         `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/validate/${router.query.uuid}`
-  //       );
-  //       setQrCode(data.qrCode);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchQRCode();
-  // });
-
-
 
   useEffect(() => {
     const timer = setInterval(() => {

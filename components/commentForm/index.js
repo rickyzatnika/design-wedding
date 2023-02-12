@@ -70,7 +70,6 @@ const CommentForm = ({ guest }) => {
         >
           <div className="flex items-center flex-col sm:flex-row justify-between w-full">
             <div className="w-full">
-              <label className="text-zinc-300/90 mb-2">Nama :</label>
               <input
                 readOnly
                 type="text"
@@ -79,7 +78,7 @@ const CommentForm = ({ guest }) => {
                 className="w-full cursor-not-allowed bg-zinc-700/90 my-2 py-2 px-4 rounded text-zinc-100 border-none outline-none   placeholder:italic "
               />
             </div>
-            <div className="w-full py-1 sm:py-3">
+            <div className="w-full hidden py-1 sm:py-3">
               <label className="text-zinc-300/90 mb-2">Status :</label>
               <input
                 readOnly
