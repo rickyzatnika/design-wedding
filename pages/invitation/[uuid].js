@@ -66,7 +66,7 @@ export const getServerSideProps = async ({ params }) => {
   const guest = res.data || {};
 
   const res2 = await axios.get(
-    `${process.env.NEXT_PUBLIC_DEV_GET}/api/comment`
+    `${process.env.NEXT_PUBLIC_PRO_GET}/api/comment`
   );
   const posts = res2.data || {};
 
