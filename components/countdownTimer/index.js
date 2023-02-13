@@ -100,7 +100,7 @@ export default function CountDownTimer({ ...props }) {
           {/* Timer Second */}
           <motion.div
             initial={{ x: -30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, type: "keyframes" }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
