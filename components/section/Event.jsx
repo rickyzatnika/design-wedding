@@ -50,10 +50,10 @@ const Event = ({ guest }) => {
       </div>
       <div className="w-full min-h-screen flex flex-col items-center justify-around relative z-40">
         <motion.h1
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="text-4xl bg-gradient-to-tr from-amber-600 via-yellow-700 to-transparent bg-clip-text text-transparent font-[parisienne] "
         >
           Save The Date
@@ -65,7 +65,7 @@ const Event = ({ guest }) => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="flex flex-col gap-6 items-center justify-center"
         >
           <AddToCalendarButton

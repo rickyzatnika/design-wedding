@@ -69,7 +69,7 @@ const Header = () => {
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1, type: "fade" }}
+          transition={{ duration: 0.8, type: "keyframes" }}
           className="w-full relative z-20 flex flex-col items-center justify-center"
         >
           <h1 className="text-zinc-200 font-[Hattori] text-3xl">
@@ -90,7 +90,7 @@ const Header = () => {
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="flex flex-col relative z-50 items-center gap-1 justify-center w-80"
         >
           <div className="mouse"></div>

@@ -44,10 +44,10 @@ export default function CountDownTimer({ ...props }) {
     <>
       <div className="w-full flex flex-col item-center justify-center gap-4">
         <motion.div
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.6, type: "keyframes" }}
           className="text-center flex flex-col pb-3 justify-center items-center shadow-lg mx-auto  bg-gradient-to-tr w-40  h-40 from-zinc-50 to-zinc-200 overflow-hidden  clip"
         >
           {/* Timer Days */}
@@ -65,10 +65,10 @@ export default function CountDownTimer({ ...props }) {
 
           {/* Timer Hours */}
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.7, type: "keyframes" }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
@@ -85,7 +85,7 @@ export default function CountDownTimer({ ...props }) {
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.7 }}
+            transition={{ duration: 0.7, type: "keyframes" }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">
@@ -99,10 +99,10 @@ export default function CountDownTimer({ ...props }) {
           </motion.div>
           {/* Timer Second */}
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ x: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 0.7, type: "keyframes" }}
             className="text-center flex flex-col pb-2 shadow-lg  bg-gradient-to-tr w-28  h-28  from-zinc-50 to-zinc-200 overflow-hidden  clip"
           >
             <div className=" text-3xl sm:text-5xl m-auto font-bold flex items-center justify-center">

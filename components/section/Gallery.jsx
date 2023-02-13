@@ -19,7 +19,7 @@ const Gallery = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           viewport={{ once: true }}
           className="text-center w-full py-4 grid grid-cols-1 leading-relaxed"
         >

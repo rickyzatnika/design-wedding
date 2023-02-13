@@ -26,7 +26,7 @@ const Profile = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="flex flex-col items-center relative w-full"
         >
           <Image
@@ -71,7 +71,7 @@ const Profile = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="font-[parisienne] text-6xl text-amber-700/80"
         >
           &
@@ -80,7 +80,7 @@ const Profile = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="relative w-full"
         >
           <Image

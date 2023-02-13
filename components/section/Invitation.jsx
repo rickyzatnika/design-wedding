@@ -24,7 +24,7 @@ const Invitation = ({ guest }) => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, type: "keyframes" }}
           className="text-zinc-100 mb-2 text-4xl font-[Hattori]"
         >
           Assalamu`alaikum Wr.Wb
@@ -33,7 +33,7 @@ const Invitation = ({ guest }) => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7, type: "keyframes" }}
           className="text-zinc-400 text-sm leading-relaxed"
         >
           Dengan menyebut nama Allah SWT yang Maha Pengasih dan Maha Penyayang,
@@ -46,7 +46,7 @@ const Invitation = ({ guest }) => {
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
+        transition={{ duration: 0.7, type: "keyframes" }}
         className="flex flex-col leading-relaxed justify-center text-center gap-2 items-center"
       >
         <span className="text-zinc-400 italic">Pada Tanggal :</span>
@@ -68,7 +68,7 @@ const Invitation = ({ guest }) => {
         initial={{ y: 25, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.1 }}
+        transition={{ duration: 0.7, type: "keyframes" }}
         className="w-full flex flex-nowrap items-center justify-around"
       >
         <div className="w-fit text-center flex flex-col items-center gap-2  py-2 leading-relaxed">
