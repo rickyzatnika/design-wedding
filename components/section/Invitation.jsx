@@ -50,12 +50,12 @@ const Invitation = ({ guest }) => {
         className="flex flex-col leading-relaxed justify-center text-center gap-2 items-center"
       >
         <span className="text-zinc-400 italic">Pada Tanggal :</span>
-        <span className="text-4xl bg-gradient-to-tr from-amber-400 via-yellow-600 to-amber-400 bg-clip-text text-transparent font-[parisienne]">
+        <span className="text-4xl bg-gradient-to-tr from-amber-400 via-yellow-600/90 to-amber-400 bg-clip-text text-transparent font-[parisienne]">
           10 Juni 2023
         </span>
         <div className="py-4 leading-relaxed">
           <p className="text-zinc-400 italic">Tempat :</p>
-          <p className="bg-gradient-to-tr flex text-xl flex-col items-center gap-4 from-amber-600/70 via-yellow-600/70 to-amber-500/70 bg-clip-text text-transparent">
+          <p className="bg-gradient-to-tr flex text-xl flex-col items-center gap-4 from-amber-400/90 via-yellow-600 to-amber-400/90 bg-clip-text text-transparent">
             Al Haromain <br />
             <span className="px-6 leading-relaxed text-sm">
               Jl. Tubagus Ismail No.90, Sekeloa, Kecamatan Coblong, Kota
