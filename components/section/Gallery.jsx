@@ -17,9 +17,9 @@ const Gallery = () => {
     <>
       <div id="gallery" className="w-full min-h-screen py-10 relative">
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
           className="text-center w-full py-4 grid grid-cols-1 leading-relaxed"
         >

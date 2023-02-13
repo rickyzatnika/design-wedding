@@ -65,7 +65,13 @@ const Header = () => {
           </Slick>
         </motion.div>
         <div className="w-full min-h-screen bg-gradient-to-tl from-black via-black/60 to-transparent absolute top-0 z-10"></div>
-        <div className="w-full relative z-20 flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1, type: "fade" }}
+          className="w-full relative z-20 flex flex-col items-center justify-center"
+        >
           <h1 className="text-zinc-200 font-[Hattori] text-3xl">
             The Wedding Of
           </h1>
@@ -78,12 +84,18 @@ const Header = () => {
               Dinda
             </h4>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col relative z-50 items-center gap-1 justify-center w-80">
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="flex flex-col relative z-50 items-center gap-1 justify-center w-80"
+        >
           <div className="mouse"></div>
           <small className="text-zinc-300/80">scroll down</small>
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -38,7 +38,7 @@ const GetQrCode = ({ setShowQrCode }) => {
               <p className="font-[parisienne] text-3xl font-semibold text-amber-600">
                 Rahmadi & Dinda
               </p>
-              <span>Ahad, 02 Juli 2023</span>
+              <span>Sabtu, 10 Juni 2023</span>
               <div className="w-full text-center">
                 {qrCode && !qrCode ? (
                   <p>Loading....</p>
@@ -56,7 +56,7 @@ const GetQrCode = ({ setShowQrCode }) => {
                 <div className="flex flex-col items-center pt-3">
                   <BiMap size={28} className="text-zinc-900/80" />
                   <p className="text-zinc-900/80 antialiased font-[Hattori] ">
-                    Aula Gupusmu GSG Gatot.SP
+                    Al Haromain - Jl. Tubagus Ismail No.90
                   </p>
                 </div>
               </div>

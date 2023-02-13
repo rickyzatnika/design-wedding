@@ -58,7 +58,7 @@ const Aside = () => {
         </div>
         <div className=" w-fit flex items-center justify-between gap-2 fixed bottom-12 py-2 px-6  text-white">
           <span className="font-[Hattori] tracking-widest text-zinc-200">
-            2 JULI 2023
+            10 JUNI 2023
           </span>
           <span className="w-2 h-2 rounded-full animate-ping bg-green-500/80 backdrop-blur"></span>
         </div>

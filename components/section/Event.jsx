@@ -49,18 +49,31 @@ const Event = ({ guest }) => {
         />
       </div>
       <div className="w-full min-h-screen flex flex-col items-center justify-around relative z-40">
-        <h1 className="text-4xl bg-gradient-to-tr from-amber-600 via-yellow-700 to-transparent bg-clip-text text-transparent font-[parisienne] ">
+        <motion.h1
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-4xl bg-gradient-to-tr from-amber-600 via-yellow-700 to-transparent bg-clip-text text-transparent font-[parisienne] "
+        >
           Save The Date
-        </h1>
+        </motion.h1>
         <div className="w-full px-2">
           <CountDown />
         </div>
-        <div className="flex flex-col gap-6 items-center justify-center">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="flex flex-col gap-6 items-center justify-center"
+        >
           <AddToCalendarButton
             name="The Wedding Rahmadi & Dinda"
             options="'Google'"
-            location="Aula Gupusmu GSG Gatot.SP"
-            startDate="2023-7-2"
+            location="Jl. Tubagus Ismail No.90, Sekeloa, Kecamatan Coblong, Kota
+              Bandung, Jawa Barat 40134"
+            startDate="2023-6-10"
             startTime="10:15"
             endTime="14:20"
             buttonStyle="date"
@@ -69,7 +82,7 @@ const Event = ({ guest }) => {
             trigger="click"
           ></AddToCalendarButton>
           <Link
-            href="https://goo.gl/maps/25iiaK6raSq3JefF9"
+            href="https://goo.gl/maps/ZvZ5y5s5x8r4nwJk7"
             target="_blank"
             prefetch={false}
             passHref
@@ -78,7 +91,7 @@ const Event = ({ guest }) => {
             <TbMapSearch size={20} className="text-zinc-600/80" />
             OPEN MAPS
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {showModal && (
@@ -97,8 +110,8 @@ const Event = ({ guest }) => {
               <div className="py-2 antialiased">
                 <h1 className="text-zinc-800">Hallo, {guest.name}</h1>
                 <p className="text-sm px-3 text-zinc-700/70">
-                  Jangan lupa untuk Screenshot QR-Code dan tunjukkan pada
-                  penerima tamu saat memasuki acara.
+                  Klik Ambil dan Screenshot QR-Code. Tunjukkan pada penerima
+                  tamu saat memasuki acara.
                 </p>
               </div>
               <div className="flex py-1 items-center shadow-md shadow-black/30 w-fit mx-auto px-4 rounded justify-center gap-1 bg-zinc-800">

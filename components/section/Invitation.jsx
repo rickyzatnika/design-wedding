@@ -51,15 +51,15 @@ const Invitation = ({ guest }) => {
       >
         <span className="text-zinc-400 italic">Pada Tanggal :</span>
         <span className="text-4xl bg-gradient-to-tr from-amber-400 via-yellow-600 to-amber-400 bg-clip-text text-transparent font-[parisienne]">
-          02 Juli 2023
+          10 Juni 2023
         </span>
         <div className="py-4 leading-relaxed">
           <p className="text-zinc-400 italic">Tempat :</p>
           <p className="bg-gradient-to-tr flex text-xl flex-col items-center gap-4 from-amber-600/70 via-yellow-600/70 to-amber-500/70 bg-clip-text text-transparent">
-            Aula Gupusmu GSG Gatot.SP <br />
+            Al Haromain <br />
             <span className="px-6 leading-relaxed text-sm">
-              Jl. Cikutra No.201, Neglasari, Kec. Cibeunying Kaler, Kota
-              Bandung, Jawa Barat 40124
+              Jl. Tubagus Ismail No.90, Sekeloa, Kecamatan Coblong, Kota
+              Bandung, Jawa Barat 40134
             </span>
           </p>
         </div>

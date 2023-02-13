@@ -3,6 +3,7 @@ import Image from "next/legacy/image";
 import bg from "../../public/image/ornamen-profile.png";
 import Link from "next/link";
 import { SlSocialInstagram } from "react-icons/sl";
+import { motion } from "framer-motion";
 
 const Profile = () => {
   return (
@@ -21,7 +22,13 @@ const Profile = () => {
       </div>
 
       <div className="w-full relative  flex flex-col items-center justify-center gap-16 h-full py-20 z-30">
-        <div className="flex flex-col items-center relative w-full">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="flex flex-col items-center relative w-full"
+        >
           <Image
             src="/img/cover-invitation-man.png"
             alt=""
@@ -59,9 +66,23 @@ const Profile = () => {
               />
             </Link>
           </div>
-        </div>
-        <div className="font-[parisienne] text-6xl text-amber-700/80">&</div>
-        <div className="relative w-full">
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-[parisienne] text-6xl text-amber-700/80"
+        >
+          &
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative w-full"
+        >
           <Image
             src="/img/cover-invitation-woman.png"
             alt=""
@@ -99,7 +120,7 @@ const Profile = () => {
               />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
