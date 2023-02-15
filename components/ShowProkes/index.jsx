@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/legacy/image";
 import { motion } from "framer-motion";
-import { SlLike } from "react-icons/sl";
+import { FcCurrencyExchange } from "react-icons/fc";
 import Gifts from "../gifts";
 
 const ShowProtocol = () => {
@@ -68,11 +68,11 @@ const ShowProtocol = () => {
               ))}
             </div>
             <button
-              className=" group transition-all duration-100 ease-linear flex items-center gap-1 font-semibold py-1 px-6 text-zinc-100 rounded-full bg-green-500/80  shadow-md shadow-black/20 hover:bg-green-500/90 hover:text-zinc-200"
+              className=" group transition-all duration-100 ease-linear flex items-center gap-1 font-semibold py-2 px-6 text-zinc-100 rounded-full bg-green-500/80  shadow-md shadow-black/20 hover:bg-green-500/90 hover:text-zinc-200"
               onClick={() => handleAmplop()}
             >
-              <span className="relative">Oke</span>
-              <SlLike className="group-hover:animate-bounce " />
+              <span className="relative">Kirim Hadiah</span>
+              <FcCurrencyExchange className="group-hover:animate-bounce text-2xl" />
             </button>
           </div>
         </motion.div>

@@ -10,14 +10,15 @@ const CommentForm = ({ guest }) => {
   const { register, handleSubmit, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { uuid } = router.query;
 
-  const formSubmit = async ({ name, message, presence }) => {
+
+
+  const formSubmit = async ({ comments }) => {
     await axios
-      .post(`${process.env.NEXT_PUBLIC_PRO_POST}/api/comment`, {
-        name: name,
-        message: message,
-        presence: presence,
-        createdAt: moment().format("DD MMMM YYYY, h:mm a"),
+      .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/comment/${uuid}`, {
+        comments: comments,
+        date: moment().format("DD MMMM YYYY, h:mm a"),
       })
       .then(() => {
         setLoading(true);
@@ -34,14 +35,11 @@ const CommentForm = ({ guest }) => {
               popup: "animate__animated animate__fadeOut",
             },
           }),
+
             reset();
-          setTimeout(() => {
-            location.reload(
-              router.push(`/invitation/${guest.unique_Code}/#wish`)
-            );
-          }, 3000);
+          window.location.reload();
         }, 2000);
-        return () => clearTimeout();
+
       })
       .catch((error) => {
         Swal.fire({
@@ -79,21 +77,7 @@ const CommentForm = ({ guest }) => {
                 className="w-full cursor-not-allowed bg-zinc-700/90 my-2 py-2 px-4 rounded text-zinc-100 border-none outline-none   placeholder:italic "
               />
             </div>
-            <div className="w-full hidden py-1 sm:py-3">
-              <label className="text-zinc-300/90 mb-2">Status :</label>
-              <input
-                readOnly
-                type="text"
-                {...register("presence", { required: true })}
-                value={guest.status === "going" ? "hadir" : "tidak hadir"}
-                className={`w-full cursor-not-allowed my-2 p-2 text-zinc-50 rounded border-none  outline-none capitalize ${guest.status !== "going"
-                  ? "bg-red-500/80 text-zinc-50"
-                  : "bg-green-500/80 text-zinc-50"
-                  }`}
-              />
-            </div>
           </div>
-
           <div className="pt-3 antialiased">
             <textarea
               name=""
@@ -101,7 +85,7 @@ const CommentForm = ({ guest }) => {
               rows="10"
               className="w-full p-4 focus:outline-indigo-500 focus:border-none placeholder:italic rounded text-zinc-700 border-none  "
               placeholder="Tulis Pesan ..."
-              {...register("message", {
+              {...register("comments", {
                 required: true,
               })}
             ></textarea>

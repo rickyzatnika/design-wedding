@@ -99,22 +99,24 @@ const Event = ({ guest }) => {
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            className={`fixed overflow-hidden top-40 right-0 shadow-lg shadow-black/20 rounded-tl-xl rounded-bl-xl w-60 lg:w-80 h-auto py-8 lg:py-6 flex items-center z-50 justify-center bg-zinc-50 transition-all duration-500 ease-linear
+            className={`fixed overflow-hidden top-40 right-0 shadow-lg shadow-black/10 rounded-tl-xl rounded-bl-xl w-64 lg:w-80 h-60 py-8 lg:py-6 flex items-center z-50 justify-center bg-gradient-to-tr from-white to-zinc-200 backdrop-blur transition-all duration-500 ease-linear
                 ${
                   showModal
                     ? " right-0 "
                     : " -right-[100%] transition-all duration-500 ease-linear"
                 }`}
           >
-            <div className="text-center">
-              <div className="py-2 antialiased">
-                <h1 className="text-zinc-800">Hallo, {guest.name}</h1>
-                <p className="text-sm px-3 text-zinc-700/70">
-                  Klik Ambil dan Screenshot QR-Code. Tunjukkan pada penerima
-                  tamu saat memasuki acara.
+            <div className="text-center flex flex-col justify-evenly h-full">
+              <div className="py-3 space-y-2">
+                <h1 className="text-zinc-800 text-xl lg:text-2xl">
+                  Hallo, {guest.name}
+                </h1>
+                <p className="text-md italic px-2 text-zinc-700/90">
+                  Ambil dan Screenshot QR-Code. Tunjukkan pada penerima tamu
+                  saat memasuki acara.
                 </p>
               </div>
-              <div className="flex py-1 items-center shadow-md shadow-black/30 w-fit mx-auto px-4 rounded justify-center gap-1 bg-zinc-800">
+              <div className="flex py-2 px-5  items-center shadow-md shadow-black/30 w-fit mx-auto rounded justify-center gap-1 bg-zinc-800">
                 <MdOutlineQrCode2 size={28} className="text-zinc-300" />
                 <button
                   className="text-zinc-300 text-sm"

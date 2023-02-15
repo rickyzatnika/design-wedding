@@ -23,7 +23,7 @@ const PreviewModal = () => {
                 </h1>
               </div>
             </div>
-            <di className="w-full px-5  lg:px-10 flex flex-col gap-2 justify-around">
+            <div className="w-full px-5  lg:px-10 flex flex-col gap-2 justify-around">
               <ol className="list-decimal list-inside leading-relaxed">
                 <li className="text-zinc-700 mb-3">
                   Salin dan Tempelkan Kode Undangan yang Anda dapat dari
@@ -44,7 +44,7 @@ const PreviewModal = () => {
                   Jika lupa, bisa refresh kembali browser anda.
                 </li>
               </ol>
-            </di>
+            </div>
             <button
               onClick={closeModal}
               className="flex group items-center gap-2 border-b border-zinc-600 text-zinc-600 hover:text-zinc-900"

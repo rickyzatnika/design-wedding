@@ -13,6 +13,7 @@ export default function Home() {
   const { register, handleSubmit } = useForm();
   const [uuid, setUuid] = useState("");
   const [copyText, setCopyText] = useState(true);
+  const [guest, setGuest] = useState([])
   const [showUnique, setShowUnique] = useState(true);
   const [selectedValue, setSelectedValue] = useState("");
   const [showMsg, setShowMsg] = useState(false);
@@ -28,7 +29,9 @@ export default function Home() {
         `${process.env.NEXT_PUBLIC_PRO_URI}/invitation/${uuid}`
       );
 
-      if (!response.data) {
+      setGuest(response.data);
+
+      if (!guest) {
         Swal.fire({
           icon: "error",
           text: error.response.data.msg,
@@ -61,15 +64,18 @@ export default function Home() {
 
   const formSubmit = async ({ status, present }) => {
     try {
+
+      const userId = guest.userId;
+
       await axios
-        .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/status/${uuid}`, {
+        .patch(`${process.env.NEXT_PUBLIC_PRO_URI}/invitation/status/${uuid}?userId=${userId}`, {
           present: present,
           status: selectedValue,
         })
 
       setShowUnique(false);
       setLoading(true)
-      router.push(`/invitation/${uuid}`);
+      router.push(`/invitation/${uuid}?userId=${userId}`);
 
     } catch (error) {
       console.log(error);

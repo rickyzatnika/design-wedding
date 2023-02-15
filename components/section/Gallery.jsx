@@ -21,14 +21,15 @@ const Gallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, type: "keyframes" }}
           viewport={{ once: true }}
-          className="text-center w-full py-4 grid grid-cols-1 leading-relaxed"
+          className="text-center w-full py-10 leading-loose"
         >
-          <span className="font-[Hattori]  bg-gradient-to-br from-yellow-500 via-amber-700 to-amber-500 bg-clip-text text-transparent text-xl sm:text-4xl">
-            Our <br />
-            <span className="font-[timesi] font-semibold">Happiness</span>{" "}
-            <br />
-            Moments
-          </span>
+          <div className="font-[Hattori] flex flex-col gap-2 bg-gradient-to-br from-amber-700 via-yellow-500/80 to-amber-700 bg-clip-text text-transparent text-3xl sm:text-3xl">
+            <span>Our </span>
+            <span className="font-[parisienne] text-5xl font-semibold">
+              Happiness
+            </span>{" "}
+            <span> Moments</span>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

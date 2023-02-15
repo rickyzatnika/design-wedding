@@ -30,12 +30,24 @@ const GetQrCode = ({ setShowQrCode }) => {
 
   return (
     <>
-      <div className="w-full lg:w-2/6 h-screen fixed backdrop-blur z-[999999999] top-0 right-0 flex flex-col justify-center items-center ">
-        <div className="antialiased w-full   bg-gradient-to-tr  from-white/60 to-transparent h-full flex flex-col items-center justify-evenly ">
-          <div className="w-full relative h-full flex flex-col items-center justify-evenly bg-zinc-200 leading-loose text-center">
-            <div className="pb-5 py-10 flex w-full flex-col text-zinc-600 gap-2 items-center">
-              <p className="font-[Hattori] tracking-widest">The Wedding Of</p>
-              <p className="font-[parisienne] text-3xl font-semibold text-amber-600">
+      <div className="w-full lg:w-2/6 min-h-screen fixed  z-[999999999] top-0 right-0 flex flex-col justify-center items-center ">
+        <div className="w-full absolute top-0 h-full">
+          <Image
+            src="/img/bg-qr-code.png"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            priority
+          />
+        </div>
+        <div className="antialiased w-full   h-full flex flex-col items-center justify-evenly ">
+          <div className="w-full relative h-full flex flex-col items-center justify-evenly leading-loose text-center">
+            <div className="pb-5 py-10 flex w-full flex-col  gap-2 items-center">
+              <p className="font-[Hattori] text-zinc-700 tracking-widest">
+                The Wedding Of
+              </p>
+              <p className="font-[parisienne] text-4xl font-semibold text-amber-600">
                 Rahmadi & Dinda
               </p>
               <span>Sabtu, 10 Juni 2023</span>
@@ -55,7 +67,7 @@ const GetQrCode = ({ setShowQrCode }) => {
                 )}
                 <div className="flex flex-col items-center pt-3">
                   <BiMap size={28} className="text-zinc-900/80" />
-                  <p className="text-zinc-900/80 antialiased font-[Hattori] ">
+                  <p className="text-zinc-900/80 antialiased text-lg font-[Hattori] ">
                     Al Haromain - Jl. Tubagus Ismail No.90
                   </p>
                 </div>
